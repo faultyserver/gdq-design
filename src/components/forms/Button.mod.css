@@ -1,0 +1,71 @@
+.button {
+  background-color: var(--_button-background);
+  color: var(--_button-text);
+  border: none;
+  padding: 8px 16px;
+  font-family: var(--font-accent);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--_button-background-hover);
+  }
+
+  &:active {
+    background-color: var(--_button-background-active);
+  }
+}
+
+.primary {
+  --_button-background: var(--status-primary-background);
+  --_button-text: var(--status-primary-foreground);
+  --_button-background-hover: var(--status-primary-hover);
+  --_button-background-active: var(--status-primary-active);
+}
+
+.default {
+  --_button-background: var(--grey-530);
+  --_button-text: var(--text-normal);
+  --_button-background-hover: var(--grey-560);
+  --_button-background-active: var(--grey-600);
+}
+
+.success {
+  --_button-background: var(--status-success-background);
+  --_button-text: var(--status-success-foreground);
+  --_button-background-hover: var(--status-success-hover);
+  --_button-background-active: var(--status-success-active);
+}
+
+.warning {
+  --_button-background: var(--status-warning-background);
+  --_button-text: var(--status-warning-foreground);
+  --_button-background-hover: var(--status-warning-hover);
+  --_button-background-active: var(--status-warning-active);
+}
+
+.danger {
+  --_button-background: var(--status-danger-background);
+  --_button-text: var(--status-danger-foreground);
+  --_button-background-hover: var(--status-danger-hover);
+  --_button-background-active: var(--status-danger-active);
+}
+
+.info {
+  --_button-background: var(--status-info-background);
+  --_button-text: var(--status-info-foreground);
+  --_button-background-hover: var(--status-info-hover);
+  --_button-background-active: var(--status-info-active);
+}
+
+.link {
+  --_button-background: transparent;
+  --_button-text: var(--text-normal);
+  --_button-background-hover: transparent;
+  --_button-background-active: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
