@@ -1,6 +1,8 @@
 export { AppContainer } from "./components/core/AppContainer";
 export { Anchor } from "./components/core/Anchor";
 export type { AnchorProps } from "./components/core/Anchor";
+export { BrandLogo } from "./components/core/BrandLogo";
+export type { BrandLogoProps } from "./components/core/BrandLogo";
 export { Clickable } from "./components/core/Clickable";
 export type { ClickableProps } from "./components/core/Clickable";
 export { Theme, ThemeProvider, useThemeClass } from "./components/core/ThemeProvider";
@@ -24,6 +26,8 @@ export { Card } from "./components/layout/Card";
 export type { CardProps, CardLevel } from "./components/layout/Card";
 export { Divider } from "./components/layout/Divider";
 export type { DividerProps } from "./components/layout/Divider";
+export { Hero } from "./components/layout/Hero";
+export type { HeroProps, HeroType } from "./components/layout/Hero";
 export { Spacer } from "./components/layout/Spacer";
 export { Stack } from "./components/layout/Stack";
 export type { StackProps, StackSpacing } from "./components/layout/Stack";

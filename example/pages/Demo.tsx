@@ -2,6 +2,7 @@ import * as React from "react";
 
 import {
   Anchor,
+  BrandLogo,
   Button,
   Callout,
   Card,
@@ -10,6 +11,7 @@ import {
   FormControl,
   FormSwitch,
   Header,
+  Hero,
   RadioGroup,
   SelectInput,
   Stack,
@@ -49,11 +51,18 @@ export default function Demo() {
 
   return (
     <>
-      <Header tag="h1" variant="header-lg" uppercase withMargin>
-        GDQ Design System
-      </Header>
       <Stack spacing="space-lg">
-        <Text>This is a demo of the GDQ Design System components.</Text>
+        <Hero type="primary">
+          <Stack direction="horizontal" spacing="space-lg">
+            <BrandLogo color="white" />
+            <div>
+              <Header tag="h1" variant="header-xl" uppercase>
+                GDQ Design System
+              </Header>
+              <Text variant="text-lg">This is a demo of the GDQ Design System components.</Text>
+            </div>
+          </Stack>
+        </Hero>
         <FormControl label="A text input" note="Some hint text to nudge the user">
           <TextInput
             value={textValue}
