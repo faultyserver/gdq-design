@@ -1,4 +1,6 @@
 export { AppContainer } from "./components/core/AppContainer";
+export { Anchor } from "./components/core/Anchor";
+export type { AnchorProps } from "./components/core/Anchor";
 export { Clickable } from "./components/core/Clickable";
 export type { ClickableProps } from "./components/core/Clickable";
 export { Theme, ThemeProvider, useThemeClass } from "./components/core/ThemeProvider";
@@ -9,6 +11,8 @@ export { Checkbox } from "./components/forms/Checkbox";
 export type { CheckboxProps } from "./components/forms/Checkbox";
 export { FormControl } from "./components/forms/FormControl";
 export type { FormControlProps } from "./components/forms/FormControl";
+export { FormSwitch } from "./components/forms/FormSwitch";
+export type { FormSwitchProps } from "./components/forms/FormSwitch";
 export { RadioGroup } from "./components/forms/RadioGroup";
 export type { RadioGroupProps } from "./components/forms/RadioGroup";
 export { SelectInput } from "./components/forms/SelectInput";

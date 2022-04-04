@@ -15,7 +15,7 @@ type InteractiveARIARole =
   | "treeitem";
 
 export interface ClickableProps {
-  tag?: "div" | "span" | "label";
+  tag?: "div" | "span" | "label" | "a";
   role?: InteractiveARIARole;
   tabIndex?: -1 | 0;
   children: React.ReactNode;

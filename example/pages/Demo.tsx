@@ -1,12 +1,14 @@
 import * as React from "react";
 
 import {
+  Anchor,
   Button,
   Callout,
   Card,
   Checkbox,
   Divider,
   FormControl,
+  FormSwitch,
   Header,
   RadioGroup,
   SelectInput,
@@ -43,6 +45,7 @@ export default function Demo() {
   const [selectedItem, setSelectedItem] = React.useState<{ name: string; value: string }>();
   const [checked, setChecked] = React.useState(false);
   const [radioValue, setRadioValue] = React.useState<string | undefined>();
+  const [switchChecked, setSwitchChecked] = React.useState(false);
 
   return (
     <>
@@ -102,6 +105,12 @@ export default function Demo() {
             informational, but it's meant to bring attention to a notification.
           </Text>
         </Callout>
+        <FormSwitch
+          checked={switchChecked}
+          onChange={(event) => setSwitchChecked(event.target.checked)}
+          label="A FormSwitch is a better checkbox for settings"
+          note="They take up the full width of the container and have a more prominent label and spacing, making them flow better with the rest of the page."
+        />
         <Card>
           <Stack spacing="space-lg">
             <Header tag="h2" variant="header-md">
@@ -122,6 +131,7 @@ export default function Demo() {
             <Card>
               <Text>
                 Cards automatically take care of nesting to ensure color boundaries are visible.
+                This one also has a <Anchor href="/login">link inside of it</Anchor>.
               </Text>
             </Card>
             <Stack direction="reverse-horizontal" spacing="space-md">

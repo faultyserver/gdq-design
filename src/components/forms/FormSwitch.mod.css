@@ -1,0 +1,56 @@
+.container {
+  margin: 4px 0;
+}
+
+.mainRow {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.switch {
+  border: 2px solid var(--accent-primary);
+  border-radius: 100000px;
+  width: 44px;
+}
+
+.iconContainer {
+  position: relative;
+  margin: 1px;
+  height: 18px;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  right: unset;
+  display: block;
+  height: 18px;
+  color: var(--accent-primary);
+  transition: left right 0.1s ease-in;
+}
+
+.iconUnchecked {
+  opacity: 1;
+}
+
+.iconChecked {
+  opacity: 0;
+}
+
+.checked {
+  & .icon {
+    left: unset;
+    right: 0;
+  }
+
+  & .iconUnchecked {
+    opacity: 0;
+  }
+
+  & .iconChecked {
+    opacity: 1;
+  }
+}

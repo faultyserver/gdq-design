@@ -4,20 +4,20 @@
     "background-primary": ["grey-760", "white"],
     "background-secondary": ["grey-700", "grey-160"],
     "background-tertiary": ["grey-600", "grey-260"],
-    "background-accent": ["grey-900", "grey-200"],
+    "background-accent": ["grey-800", "grey-200"],
 
     "text-normal": ["grey-100", "grey-900"],
-    "text-secondary": ["grey-460", "grey-600"],
+    "text-secondary": ["grey-460", "grey-660"],
 
     "status-primary-background": ["pink-460", "pink-560"],
     "status-primary-foreground": ["pink-760", "pink-100"],
-    "status-primary-hover": ["pink-500", "pink-500"],
-    "status-primary-active": ["pink-530", "pink-460"],
+    "status-primary-hover": ["pink-500", "pink-530"],
+    "status-primary-active": ["pink-530", "pink-500"],
 
     "status-success-background": ["green-600", "green-600"],
     "status-success-foreground": ["green-100", "green-100"],
-    "status-success-hover": ["green-630", "green-500"],
-    "status-success-active": ["green-660", "green-460"],
+    "status-success-hover": ["green-630", "green-560"],
+    "status-success-active": ["green-660", "green-530"],
 
     "status-warning-background": ["yellow-500", "yellow-600"],
     "status-warning-foreground": ["yellow-800", "yellow-100"],
