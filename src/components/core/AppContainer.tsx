@@ -1,11 +1,11 @@
 import * as React from "react";
+import classNames from "classnames";
 
 import { getThemeClass, Theme, ThemeProvider } from "./ThemeProvider";
 
 import styles from "./AppContainer.mod.css";
 
 import "gdq-design/styles.css";
-import classNames from "classnames";
 
 export interface AppContainerProps {
   theme?: Theme;

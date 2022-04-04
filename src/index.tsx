@@ -32,6 +32,8 @@ export { Spacer } from "./components/layout/Spacer";
 export { Stack } from "./components/layout/Stack";
 export type { StackProps, StackSpacing } from "./components/layout/Stack";
 
+export { Markdown } from "./components/text/Markdown";
+export type { MarkdownProps } from "./components/text/Markdown";
 export { Header, Text } from "./components/text/Text";
 export type { HeaderProps, TextProps } from "./components/text/Text";
 
