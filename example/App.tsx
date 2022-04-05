@@ -19,8 +19,9 @@ import Login from "./pages/Login";
 import styles from "./App.mod.css";
 
 export default function App() {
-  const [theme, setTheme] = React.useState<Theme>(Theme.LIGHT);
+  const [theme, setTheme] = React.useState<Theme>(Theme.DARK);
   const [accent, setAccent] = React.useState<Accent>(Accent.PINK);
+
   return (
     <AppContainer theme={theme} accent={accent}>
       <BrowserRouter>

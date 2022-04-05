@@ -19,13 +19,32 @@ const DIRECTION_CLASSES = {
   "reverse-vertical": styles["reverse-vertical"],
 };
 
+const STACK_ALIGNMENT = {
+  start: styles["align-start"],
+  end: styles["align-end"],
+  center: styles["align-center"],
+  stretch: styles["align-stretch"],
+};
+
+const STACK_JUSTIFICATION = {
+  start: styles["justify-start"],
+  end: styles["justify-end"],
+  center: styles["justify-center"],
+  stretch: styles["justify-stretch"],
+  "space-between": styles["justify-space-between"],
+  "space-around": styles["justify-space-around"],
+};
+
 export type Spacing = keyof typeof STACK_SPACES;
+export type Alignment = keyof typeof STACK_ALIGNMENT;
+export type Justification = keyof typeof STACK_JUSTIFICATION;
 export type StackDirection = keyof typeof DIRECTION_CLASSES;
 
 export interface StackProps {
   spacing?: Spacing;
   direction?: StackDirection;
-  stretch?: boolean;
+  justify?: Justification;
+  align?: Alignment;
   children: React.ReactNode;
   className?: string;
 }
@@ -34,7 +53,8 @@ export function Stack(props: StackProps) {
   const {
     spacing = "space-md",
     direction = "vertical",
-    stretch = false,
+    justify,
+    align,
     children,
     className,
   } = props;
@@ -44,9 +64,10 @@ export function Stack(props: StackProps) {
       className={classNames(
         styles.stack,
         STACK_SPACES[spacing],
+        justify != null ? STACK_JUSTIFICATION[justify] : undefined,
+        align != null ? STACK_ALIGNMENT[align] : undefined,
         DIRECTION_CLASSES[direction],
         className,
-        { [styles.stretch]: stretch },
       )}
     >
       {children}

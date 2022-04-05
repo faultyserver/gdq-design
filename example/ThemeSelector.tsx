@@ -24,7 +24,7 @@ export default function ThemeSelector(props: ThemeSelectorProps) {
   const { theme, accent, setTheme, setAccent } = props;
 
   return (
-    <Stack direction="horizontal" stretch spacing="space-md">
+    <Stack direction="horizontal" justify="stretch" spacing="space-lg">
       <FormControl label="Theme" color="inherit">
         <SelectInput
           items={THEME_OPTIONS}

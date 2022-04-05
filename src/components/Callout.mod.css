@@ -1,6 +1,7 @@
 .callout {
   display: flex;
   align-items: stretch;
+  flex-wrap: nowrap;
   border: 2px solid var(--_callout-background-color);
 }
 
