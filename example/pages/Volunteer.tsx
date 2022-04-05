@@ -64,7 +64,6 @@ export default function Volunteer() {
             </div>
           </Stack>
         </Card>
-        <Spacer />
         <Card>
           <Stack spacing="space-lg">
             <Header tag="h2">On-Site Volunteer</Header>
@@ -91,7 +90,7 @@ export default function Volunteer() {
               {POSITIONS.map((position) => (
                 <Checkbox label={position} checked={false} />
               ))}
-              <Text variant="text-sm/secondary">*More info required below</Text>
+              <Text variant="text-md/secondary">*More info required below</Text>
             </Stack>
             <FormControl label="Any other information in regards to qualifications?">
               <TextInput />
