@@ -100,7 +100,14 @@ def write_font_tokens(file_path: Path, fonts: t.Dict[str, str]):
         file.write("}\n")
 
 
-REQUIRED_ACCENT_TOKENS = ["primary", "background", "foreground", "hover", "active"]
+REQUIRED_ACCENT_TOKENS = [
+    "primary",
+    "background",
+    "foreground",
+    "hover",
+    "active",
+    "text",
+]
 
 
 class InvalidAccentDefinitionError(Exception):

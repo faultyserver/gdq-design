@@ -2,7 +2,6 @@ import * as React from "react";
 
 import {
   Anchor,
-  BrandLogo,
   Button,
   Callout,
   Card,
@@ -11,7 +10,6 @@ import {
   FormControl,
   FormSwitch,
   Header,
-  Hero,
   Markdown,
   RadioGroup,
   SelectInput,
@@ -52,17 +50,6 @@ export default function Demo() {
 
   return (
     <Stack spacing="space-lg">
-      <Hero type="primary">
-        <Stack direction="horizontal" spacing="space-lg">
-          <BrandLogo color="white" />
-          <div>
-            <Header tag="h1" variant="header-xl" uppercase>
-              GDQ Design System
-            </Header>
-            <Text variant="text-lg">This is a demo of the GDQ Design System components.</Text>
-          </div>
-        </Stack>
-      </Hero>
       <FormControl label="A text input" note="Some hint text to nudge the user">
         <TextInput
           value={textValue}
@@ -106,7 +93,7 @@ export default function Demo() {
       </Stack>
       <Divider />
       <Callout type="info">
-        <Header tag="h3" variant="header-sm" withMargin>
+        <Header tag="h3" variant="header-sm/normal" withMargin>
           This is a Callout
         </Header>
         <Text>
@@ -117,12 +104,12 @@ export default function Demo() {
       <FormSwitch
         checked={switchChecked}
         onChange={(event) => setSwitchChecked(event.target.checked)}
-        label="A FormSwitch is a better checkbox for settings"
+        label="A FormSwitch is a better checkbox for settings with long labels"
         note="They take up the full width of the container and have a more prominent label and spacing, making them flow better with the rest of the page."
       />
       <Card>
         <Stack spacing="space-lg">
-          <Header tag="h2" variant="header-md">
+          <Header tag="h2" variant="header-md/normal">
             This is a card
           </Header>
           <Text>

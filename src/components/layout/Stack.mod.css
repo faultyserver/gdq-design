@@ -4,6 +4,10 @@
   gap: var(--_stack-spacing);
 }
 
+.spacer {
+  margin: var(--_stack-spacing);
+}
+
 .space-none {
   --_stack-spacing: 0;
 }

@@ -19,11 +19,11 @@ const DIRECTION_CLASSES = {
   "reverse-vertical": styles["reverse-vertical"],
 };
 
-export type StackSpacing = keyof typeof STACK_SPACES;
+export type Spacing = keyof typeof STACK_SPACES;
 export type StackDirection = keyof typeof DIRECTION_CLASSES;
 
 export interface StackProps {
-  spacing?: StackSpacing;
+  spacing?: Spacing;
   direction?: StackDirection;
   stretch?: boolean;
   children: React.ReactNode;
@@ -32,7 +32,7 @@ export interface StackProps {
 
 export function Stack(props: StackProps) {
   const {
-    spacing = "space-none",
+    spacing = "space-md",
     direction = "vertical",
     stretch = false,
     children,
@@ -52,4 +52,14 @@ export function Stack(props: StackProps) {
       {children}
     </div>
   );
+}
+
+export interface SpacerProps {
+  size?: Spacing;
+}
+
+export function Spacer(props: SpacerProps) {
+  const { size = "space-none" } = props;
+
+  return <div className={classNames(styles.spacer, STACK_SPACES[size])} />;
 }

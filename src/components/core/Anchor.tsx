@@ -19,7 +19,6 @@ export function Anchor(props: AnchorProps) {
   const isAbsolute = ABSOLUTE_URL_REGEX.test(href);
 
   if (isAbsolute) {
-    console.log("link was absolute");
     return (
       <a href={href} className={classNames(styles.anchor, className)} onClick={onClick}>
         {children}

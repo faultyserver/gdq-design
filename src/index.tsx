@@ -28,14 +28,18 @@ export { Divider } from "./components/layout/Divider";
 export type { DividerProps } from "./components/layout/Divider";
 export { Hero } from "./components/layout/Hero";
 export type { HeroProps, HeroType } from "./components/layout/Hero";
-export { Spacer } from "./components/layout/Spacer";
-export { Stack } from "./components/layout/Stack";
-export type { StackProps, StackSpacing } from "./components/layout/Stack";
+export { Stack, Spacer } from "./components/layout/Stack";
+export type { StackProps, Spacing } from "./components/layout/Stack";
 
 export { Markdown } from "./components/text/Markdown";
 export type { MarkdownProps } from "./components/text/Markdown";
 export { Header, Text } from "./components/text/Text";
-export type { HeaderProps, TextProps } from "./components/text/Text";
+export type {
+  HeaderProps,
+  TextProps,
+  TextVariantColor,
+  TextVariantSize,
+} from "./components/text/Text";
 
 export { Callout } from "./components/Callout";
 export type { CalloutProps, CalloutType } from "./components/Callout";

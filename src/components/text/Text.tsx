@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import styles from "./Text.mod.css";
 
-const VARIANTS = {
+const SIZE_VARIANTS = {
   "header-xs": styles["header-xs"],
   "header-sm": styles["header-sm"],
   "header-md": styles["header-md"],
@@ -16,7 +16,26 @@ const VARIANTS = {
   "text-lg": styles["text-lg"],
 };
 
-export type TextVariant = keyof typeof VARIANTS;
+const COLOR_VARIANTS = {
+  normal: styles["color-normal"],
+  secondary: styles["color-secondary"],
+  accent: styles["color-accent"],
+  success: styles["color-success"],
+  info: styles["color-info"],
+  warning: styles["color-warning"],
+  danger: styles["color-danger"],
+  inherit: styles["color-inherit"],
+};
+
+export type TextVariantSize = keyof typeof SIZE_VARIANTS;
+export type TextVariantColor = keyof typeof COLOR_VARIANTS;
+
+export type TextVariant = `${TextVariantSize}/${TextVariantColor}`;
+
+function getVariantPieces(variant: TextVariant): [TextVariantSize, TextVariantColor] {
+  const [size, color] = variant.split("/");
+  return [size as TextVariantSize, color as TextVariantColor];
+}
 
 export interface TextProps {
   tag?: "div" | "span" | "label" | "p";
@@ -26,9 +45,14 @@ export interface TextProps {
 }
 
 export function Text(props: TextProps) {
-  const { tag: Tag = "div", variant = "text-md", children, className } = props;
+  const { tag: Tag = "div", variant = "text-md/normal", children, className } = props;
+  const [size, color] = getVariantPieces(variant);
 
-  return <Tag className={classNames(styles.text, VARIANTS[variant], className)}>{children}</Tag>;
+  return (
+    <Tag className={classNames(styles.text, SIZE_VARIANTS[size], COLOR_VARIANTS[color], className)}>
+      {children}
+    </Tag>
+  );
 }
 
 export interface HeaderProps {
@@ -43,16 +67,17 @@ export interface HeaderProps {
 export function Header(props: HeaderProps) {
   const {
     tag: Tag,
-    variant = "header-lg",
+    variant = "header-lg/normal",
     uppercase = false,
     withMargin = false,
     children,
     className,
   } = props;
+  const [size, color] = getVariantPieces(variant);
 
   return (
     <Tag
-      className={classNames(styles.header, VARIANTS[variant], className, {
+      className={classNames(styles.header, SIZE_VARIANTS[size], COLOR_VARIANTS[color], className, {
         [styles.uppercase]: uppercase,
         [styles.withMargin]: withMargin,
       })}

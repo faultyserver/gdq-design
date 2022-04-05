@@ -39,7 +39,7 @@ export function FormSwitch(props: FormSwitchProps) {
         className={styles.mainRow}
         htmlFor={inputId}
       >
-        <Text variant="header-sm" className={styles.label}>
+        <Text variant="header-sm/normal" className={styles.label}>
           {label}
         </Text>
         {renderSwitch()}
@@ -51,7 +51,7 @@ export function FormSwitch(props: FormSwitchProps) {
           style={{ display: "none" }}
         />
       </Clickable>
-      <Text variant="text-sm" className={styles.note}>
+      <Text variant="text-sm/normal" className={styles.note}>
         {note}
       </Text>
     </div>

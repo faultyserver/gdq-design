@@ -9,6 +9,7 @@ const HERO_STYLES = {
   info: styles.info,
   warning: styles.warning,
   danger: styles.danger,
+  default: styles.default,
 };
 
 export type HeroType = keyof typeof HERO_STYLES;

@@ -1,6 +1,6 @@
 .anchor {
   text-decoration: underline;
-  color: var(--accent-primary);
+  color: var(--text-link);
   font-weight: 700;
 
   &:hover {

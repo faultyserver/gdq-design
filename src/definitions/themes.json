@@ -6,21 +6,24 @@
       "background": ["blue-460", "blue-560"],
       "foreground": ["blue-760", "blue-100"],
       "hover": ["blue-500", "blue-530"],
-      "active": ["blue-530", "blue-500"]
+      "active": ["blue-530", "blue-500"],
+      "text": ["blue-460", "blue-560"]
     },
     "pink": {
       "primary": ["pink-460", "pink-560"],
       "background": ["pink-460", "pink-560"],
       "foreground": ["pink-760", "pink-100"],
       "hover": ["pink-500", "pink-530"],
-      "active": ["pink-530", "pink-500"]
+      "active": ["pink-530", "pink-500"],
+      "text": ["pink-460", "pink-560"]
     },
     "purple": {
       "primary": ["purple-460", "purple-560"],
       "background": ["purple-460", "purple-560"],
       "foreground": ["purple-760", "purple-100"],
       "hover": ["purple-500", "purple-530"],
-      "active": ["purple-530", "purple-500"]
+      "active": ["purple-530", "purple-500"],
+      "text": ["purple-460", "purple-560"]
     }
   },
   "tokens": {
@@ -30,7 +33,13 @@
     "background-accent": ["grey-800", "grey-200"],
 
     "text-normal": ["grey-100", "grey-900"],
-    "text-secondary": ["grey-460", "grey-660"],
+    "text-secondary": ["grey-500", "grey-560"],
+    "text-success": ["green-600", "green-630"],
+    "text-info": ["teal-500", "teal-600"],
+    "text-warning": ["yellow-500", "yellow-630"],
+    "text-danger": ["red-530", "red-600"],
+    "text-default": ["grey-100", "grey-900"],
+    "text-link": ["accent-text", "accent-text"],
 
     "status-accent-background": ["accent-primary", "accent-primary"],
     "status-accent-foreground": ["accent-foreground", "accent-foreground"],

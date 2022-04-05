@@ -1,7 +1,31 @@
+.color-normal {
+  color: var(--text-normal);
+}
+.color-secondary {
+  color: var(--text-secondary);
+}
+.color-accent {
+  color: var(--text-accent);
+}
+.color-success {
+  color: var(--text-success);
+}
+.color-info {
+  color: var(--text-info);
+}
+.color-warning {
+  color: var(--text-warning);
+}
+.color-danger {
+  color: var(--text-danger);
+}
+.color-inherit {
+  color: inherit;
+}
+
 .text {
   font-family: var(--font-normal);
   font-weight: 400;
-  color: var(--text-normal);
 }
 
 .text-xs {
@@ -31,7 +55,6 @@
 .header {
   font-family: var(--font-accent);
   font-weight: 700;
-  color: var(--text-normal);
 }
 
 .header-xs {

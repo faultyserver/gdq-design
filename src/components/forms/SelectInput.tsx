@@ -14,7 +14,11 @@ interface SelectItem<T> {
 }
 
 function defaultRenderPlaceholder() {
-  return <Text className={styles.placeholder}>Select an Option</Text>;
+  return (
+    <Text variant="text-md/secondary" className={styles.placeholder}>
+      Select an Option
+    </Text>
+  );
 }
 
 function defaultRenderItem<T>(item: SelectItem<T>) {
