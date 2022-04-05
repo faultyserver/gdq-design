@@ -24,10 +24,11 @@
 }
 
 .icon {
+  display: block;
   position: absolute;
   left: 0;
   right: unset;
-  display: block;
+  border-radius: 100000px;
   height: 18px;
   color: var(--accent-primary);
   transition: left right 0.1s ease-in;
@@ -42,9 +43,14 @@
 }
 
 .checked {
+  & .switch {
+    background-color: var(--accent-primary);
+  }
+
   & .icon {
     left: unset;
     right: 0;
+    background-color: var(--background-accent);
   }
 
   & .iconUnchecked {
