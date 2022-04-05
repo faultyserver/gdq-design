@@ -15,7 +15,7 @@ export interface FormSwitchProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => unknown;
 }
 
-function renderSwitch(checked: boolean) {
+function renderSwitch() {
   return (
     <div className={styles.switch}>
       <div className={styles.iconContainer}>
@@ -42,7 +42,7 @@ export function FormSwitch(props: FormSwitchProps) {
         <Text variant="header-sm" className={styles.label}>
           {label}
         </Text>
-        {renderSwitch(checked)}
+        {renderSwitch()}
         <input
           type="checkbox"
           onChange={onChange}

@@ -5,7 +5,7 @@ export { BrandLogo } from "./components/core/BrandLogo";
 export type { BrandLogoProps } from "./components/core/BrandLogo";
 export { Clickable } from "./components/core/Clickable";
 export type { ClickableProps } from "./components/core/Clickable";
-export { Theme, ThemeProvider, useThemeClass } from "./components/core/ThemeProvider";
+export { Accent, Theme, ThemeProvider, useThemeClass } from "./components/core/ThemeProvider";
 
 export { Button } from "./components/forms/Button";
 export type { ButtonProps } from "./components/forms/Button";

@@ -37,6 +37,7 @@ def load_base_tokens(defs_file: Path) -> BaseTokens:
 @dataclass
 class ThemeDefinitions:
     themes: t.List[str]
+    accents: t.Dict[str, t.Dict[str, str]]
     tokens: t.Dict[str, t.List[str]]
 
 
@@ -99,6 +100,20 @@ def write_font_tokens(file_path: Path, fonts: t.Dict[str, str]):
         file.write("}\n")
 
 
+REQUIRED_ACCENT_TOKENS = ["primary", "background", "foreground", "hover", "active"]
+
+
+class InvalidAccentDefinitionError(Exception):
+    def __init__(self, name: str, missing: str):
+        self.message = f"{name} was missing definition for {missing}"
+
+
+def validate_accent_definition(name: str, tokens: t.Dict[str, str]):
+    for required in REQUIRED_ACCENT_TOKENS:
+        if required not in tokens:
+            raise InvalidAccentDefinitionError(name, required)
+
+
 def write_theme_tokens(file_path: Path, theme_map: ThemeDefinitions):
     theme_names = theme_map.themes
     tokens_by_theme: t.Dict[str, t.Dict[str, str]] = {}
@@ -112,6 +127,14 @@ def write_theme_tokens(file_path: Path, theme_map: ThemeDefinitions):
 
     with open(file_path, "w") as file:
         file.write("""/** Generated Theme Tokens. Do not edit manually **/\n\n""")
+
+        for (accent, tokens) in theme_map.accents.items():
+            validate_accent_definition(accent, tokens)
+            for (index, theme) in enumerate(theme_names):
+                file.write(f":global(.theme-{theme}.accent-{accent}) {{\n")
+                for (token, value) in tokens.items():
+                    file.write(f"  --accent-{token}: var(--{value[index]});\n")
+                file.write("}\n\n")
 
         for (theme, tokens) in tokens_by_theme.items():
             file.write(f":global(.theme-{theme}) {{\n")

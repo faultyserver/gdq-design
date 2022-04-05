@@ -1,5 +1,28 @@
 {
   "themes": ["dark", "light"],
+  "accents": {
+    "blue": {
+      "primary": ["blue-460", "blue-560"],
+      "background": ["blue-460", "blue-560"],
+      "foreground": ["blue-760", "blue-100"],
+      "hover": ["blue-500", "blue-530"],
+      "active": ["blue-530", "blue-500"]
+    },
+    "pink": {
+      "primary": ["pink-460", "pink-560"],
+      "background": ["pink-460", "pink-560"],
+      "foreground": ["pink-760", "pink-100"],
+      "hover": ["pink-500", "pink-530"],
+      "active": ["pink-530", "pink-500"]
+    },
+    "purple": {
+      "primary": ["purple-460", "purple-560"],
+      "background": ["purple-460", "purple-560"],
+      "foreground": ["purple-760", "purple-100"],
+      "hover": ["purple-500", "purple-530"],
+      "active": ["purple-530", "purple-500"]
+    }
+  },
   "tokens": {
     "background-primary": ["grey-760", "white"],
     "background-secondary": ["grey-700", "grey-160"],
@@ -9,10 +32,10 @@
     "text-normal": ["grey-100", "grey-900"],
     "text-secondary": ["grey-460", "grey-660"],
 
-    "status-primary-background": ["pink-460", "pink-560"],
-    "status-primary-foreground": ["pink-760", "pink-100"],
-    "status-primary-hover": ["pink-500", "pink-530"],
-    "status-primary-active": ["pink-530", "pink-500"],
+    "status-accent-background": ["accent-primary", "accent-primary"],
+    "status-accent-foreground": ["accent-foreground", "accent-foreground"],
+    "status-accent-hover": ["accent-hover", "accent-hover"],
+    "status-accent-active": ["accent-active", "accent-active"],
 
     "status-success-background": ["green-600", "green-600"],
     "status-success-foreground": ["green-100", "green-100"],
@@ -26,14 +49,17 @@
 
     "status-danger-background": ["red-560", "red-600"],
     "status-danger-foreground": ["red-100", "red-100"],
-    "status-danger-hover": ["red-600", "red-530"],
-    "status-danger-active": ["red-630", "red-500"],
+    "status-danger-hover": ["red-600", "red-560"],
+    "status-danger-active": ["red-630", "red-530"],
 
     "status-info-background": ["teal-500", "teal-600"],
     "status-info-foreground": ["teal-760", "teal-100"],
-    "status-info-hover": ["teal-530", "teal-530"],
-    "status-info-active": ["teal-560", "teal-500"],
+    "status-info-hover": ["teal-530", "teal-560"],
+    "status-info-active": ["teal-560", "teal-530"],
 
-    "accent-primary": ["pink-460", "pink-560"]
+    "status-default-background": ["grey-530", "grey-400"],
+    "status-default-foreground": ["grey-100", "grey-900"],
+    "status-default-hover": ["grey-560", "grey-460"],
+    "status-default-active": ["grey-600", "grey-500"]
   }
 }

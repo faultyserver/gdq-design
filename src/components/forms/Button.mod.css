@@ -18,17 +18,17 @@
 }
 
 .primary {
-  --_button-background: var(--status-primary-background);
-  --_button-text: var(--status-primary-foreground);
-  --_button-background-hover: var(--status-primary-hover);
-  --_button-background-active: var(--status-primary-active);
+  --_button-background: var(--status-accent-background);
+  --_button-text: var(--status-accent-foreground);
+  --_button-background-hover: var(--status-accent-hover);
+  --_button-background-active: var(--status-accent-active);
 }
 
 .default {
-  --_button-background: var(--grey-530);
-  --_button-text: var(--text-normal);
-  --_button-background-hover: var(--grey-560);
-  --_button-background-active: var(--grey-600);
+  --_button-background: var(--status-default-background);
+  --_button-text: var(--status-default-foreground);
+  --_button-background-hover: var(--status-default-hover);
+  --_button-background-active: var(--status-default-active);
 }
 
 .success {

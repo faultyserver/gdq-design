@@ -3,7 +3,7 @@
 }
 
 .primary {
-  background-color: var(--status-primary-background);
+  background-color: var(--status-accent-background);
 }
 .success {
   background-color: var(--status-success-background);
