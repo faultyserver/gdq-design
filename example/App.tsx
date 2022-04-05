@@ -15,12 +15,13 @@ import {
 import ThemeSelector from "./ThemeSelector";
 import Demo from "./pages/Demo";
 import Login from "./pages/Login";
+import Volunteer from "./pages/Volunteer";
 
 import styles from "./App.mod.css";
 
 export default function App() {
   const [theme, setTheme] = React.useState<Theme>(Theme.DARK);
-  const [accent, setAccent] = React.useState<Accent>(Accent.PINK);
+  const [accent, setAccent] = React.useState<Accent>(Accent.BLUE);
 
   return (
     <AppContainer theme={theme} accent={accent}>
@@ -40,11 +41,11 @@ export default function App() {
           <Spacer size="space-lg" />
           <ThemeSelector theme={theme} setTheme={setTheme} accent={accent} setAccent={setAccent} />
         </Hero>
-        <Spacer size="space-lg" />
         <div className={styles.app}>
           <Routes>
             <Route path="demo" element={<Demo />} />
             <Route path="login" element={<Login />} />
+            <Route path="volunteer" element={<Volunteer />} />
           </Routes>
         </div>
       </BrowserRouter>
