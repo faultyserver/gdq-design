@@ -42,18 +42,19 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
-  const {
-    theme: controlledTheme = Theme.DARK,
-    accent: controlledAccent = Accent.BLUE,
-    children,
-  } = props;
+  const { theme: controlledTheme, accent: controlledAccent, children } = props;
 
-  const [theme, setTheme] = React.useState(controlledTheme);
-  const [accent, setAccent] = React.useState(controlledAccent);
+  const [theme, setTheme] = React.useState(controlledTheme ?? Theme.DARK);
+  const [accent, setAccent] = React.useState(controlledAccent ?? Accent.BLUE);
 
   React.useEffect(() => {
-    setTheme(controlledTheme);
-    setAccent(controlledAccent);
+    if (controlledTheme != null) {
+      setTheme(controlledTheme);
+    }
+
+    if (controlledAccent != null) {
+      setAccent(controlledAccent);
+    }
   }, [controlledTheme, controlledAccent]);
 
   const contextValue = React.useMemo(

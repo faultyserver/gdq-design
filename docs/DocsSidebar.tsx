@@ -42,17 +42,8 @@ type SidebarTab =
 const SIDEBAR_TABS: SidebarTab[] = [
   { header: "Guides" },
   { name: "Home", route: "/" },
-  { name: "Demos", route: "/demo", color: "accent" },
-  {
-    name: "V1 Upgrade Guide",
-    route: "/upgrade",
-    color: "warning",
-    icon: ExclamationTriangle,
-  },
   { header: "Components" },
   { name: "Forms", route: "/forms" },
-  { name: "Layout", route: "/layout" },
-  { name: "Tabs", route: "/tabs", icon: InfoCircle },
   { name: "Typography", route: "/typography" },
 ];
 

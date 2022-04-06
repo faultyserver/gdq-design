@@ -1,9 +1,12 @@
 import * as React from "react";
-import { Callout, Card, Header, Stack, Text } from "gdq-design";
+import { Accent, Callout, Card, Header, Stack, Text } from "gdq-design";
 
+import usePageAccent from "../usePageAccent";
 import PageHeader from "./PageHeader";
 
 export default function Home() {
+  usePageAccent(Accent.BLUE);
+
   return (
     <Stack spacing="space-lg" align="stretch">
       <PageHeader

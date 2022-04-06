@@ -1,5 +1,5 @@
-import { Header, Hero, Stack, Text } from "gdq-design";
 import * as React from "react";
+import { Header, Hero, Stack, Text } from "gdq-design";
 
 interface PageHeaderProps {
   name: string;

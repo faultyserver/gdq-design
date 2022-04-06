@@ -7,6 +7,7 @@ A React-based Design System for GDQ.
 **Components**
 
 - [ ] Image
+  - [ ] Backdrop effects (extrusion shadow)
 - [ ] Code
 - [x] Button
   - [ ] Outline look
@@ -34,8 +35,10 @@ A React-based Design System for GDQ.
   - [ ] Popout
 - [ ] List
 - [x] TabGroup
-  - [ ] Icons
+  - [x] Icons
   - [ ] Badges
+- [ ] NavBar
+  - [ ] Dropdown
 
 **Generic**
 
