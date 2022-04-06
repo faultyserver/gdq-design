@@ -18,7 +18,7 @@ export type { ButtonProps } from "./components/forms/Button";
 export { Checkbox } from "./components/forms/Checkbox";
 export type { CheckboxProps } from "./components/forms/Checkbox";
 export { FormControl } from "./components/forms/FormControl";
-export type { FormControlProps } from "./components/forms/FormControl";
+export type { FormControlProps, FormControlSize } from "./components/forms/FormControl";
 export { FormSwitch } from "./components/forms/FormSwitch";
 export type { FormSwitchProps } from "./components/forms/FormSwitch";
 export { RadioGroup } from "./components/forms/RadioGroup";

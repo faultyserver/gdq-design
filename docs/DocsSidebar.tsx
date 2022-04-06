@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useLocation, useNavigate } from "react-router";
 
 import {
   Accent,
@@ -14,7 +15,9 @@ import {
   Theme,
   ThemeContext,
 } from "gdq-design";
-import { useLocation, useNavigate } from "react-router";
+import ExclamationTriangle from "gdq-design/icons/ExclamationTriangle";
+import { IconProps } from "gdq-design/icons/IconProps";
+import InfoCircle from "gdq-design/icons/InfoCircle";
 
 const THEME_OPTIONS = [
   { name: "Dark", value: Theme.DARK },
@@ -32,6 +35,7 @@ type SidebarTab =
       name: string;
       route: string;
       color?: TabColor;
+      icon?: React.ComponentType<IconProps>;
     }
   | { header: string };
 
@@ -39,11 +43,16 @@ const SIDEBAR_TABS: SidebarTab[] = [
   { header: "Guides" },
   { name: "Home", route: "/" },
   { name: "Demos", route: "/demo", color: "accent" },
-  { name: "V1 Upgrade Guide", route: "/upgrade", color: "warning" },
+  {
+    name: "V1 Upgrade Guide",
+    route: "/upgrade",
+    color: "warning",
+    icon: ExclamationTriangle,
+  },
   { header: "Components" },
   { name: "Forms", route: "/forms" },
   { name: "Layout", route: "/layout" },
-  { name: "Tabs", route: "/tabs" },
+  { name: "Tabs", route: "/tabs", icon: InfoCircle },
   { name: "Typography", route: "/typography" },
 ];
 
@@ -64,14 +73,14 @@ export default function DocsSidebar(props: { className: string }) {
           </Text>
         </div>
         <Divider />
-        <FormControl label="Theme">
+        <FormControl label="Theme" size="small">
           <SelectInput
             items={THEME_OPTIONS}
             selectedItem={THEME_OPTIONS.find(({ value }) => value === theme)}
             onSelect={(item) => (item != null ? setTheme(item.value) : null)}
           />
         </FormControl>
-        <FormControl label="Accent Color">
+        <FormControl label="Accent Color" size="small">
           <SelectInput
             items={ACCENT_OPTIONS}
             selectedItem={ACCENT_OPTIONS.find(({ value }) => value === accent)}
@@ -80,7 +89,7 @@ export default function DocsSidebar(props: { className: string }) {
         </FormControl>
         <Divider />
         <Tabs.Group>
-          {SIDEBAR_TABS.map(({ name, route, color, header }) =>
+          {SIDEBAR_TABS.map(({ name, route, color, header, icon }) =>
             header != null ? (
               <Tabs.Header label={header} />
             ) : (
@@ -88,6 +97,7 @@ export default function DocsSidebar(props: { className: string }) {
                 label={name}
                 onClick={() => (console.log("navigating?"), navigate(route))}
                 color={color}
+                icon={icon}
                 selected={location.pathname === route}
               />
             ),

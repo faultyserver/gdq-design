@@ -4,6 +4,7 @@ import * as React from "react";
 import { Clickable } from "gdq-design";
 
 import styles from "./TabGroup.mod.css";
+import { IconProps } from "gdq-design/icons/IconProps";
 
 const TAB_COLORS = {
   default: styles["color-default"],
@@ -19,21 +20,21 @@ export type TabColor = keyof typeof TAB_COLORS;
 export interface TabProps {
   label: React.ReactNode;
   color?: TabColor;
-  icon?: React.ReactNode;
+  icon?: React.ComponentType<IconProps>;
   badge?: React.ReactNode;
   selected?: boolean;
   onClick?: (event: React.MouseEvent) => unknown;
 }
 
 export function Tab(props: TabProps) {
-  const { label, color = "default", icon, badge, selected = false, onClick } = props;
+  const { label, color = "default", icon: Icon, badge, selected = false, onClick } = props;
 
   return (
     <Clickable
       className={classNames(styles.tab, TAB_COLORS[color], { [styles.selected]: selected })}
       onClick={onClick}
     >
-      {icon != null ? <div className={styles.icon}>{icon}</div> : null}
+      {Icon != null ? <Icon className={styles.icon} /> : null}
       <div className={styles.label}>{label}</div>
       {badge != null ? <div className={styles.badge}>{badge}</div> : null}
     </Clickable>
