@@ -5,7 +5,13 @@ export { BrandLogo } from "./components/core/BrandLogo";
 export type { BrandLogoProps } from "./components/core/BrandLogo";
 export { Clickable } from "./components/core/Clickable";
 export type { ClickableProps } from "./components/core/Clickable";
-export { Accent, Theme, ThemeProvider, useThemeClass } from "./components/core/ThemeProvider";
+export {
+  Accent,
+  Theme,
+  ThemeContext,
+  ThemeProvider,
+  useThemeClass,
+} from "./components/core/ThemeProvider";
 
 export { Button } from "./components/forms/Button";
 export type { ButtonProps } from "./components/forms/Button";
@@ -28,6 +34,7 @@ export { Divider } from "./components/layout/Divider";
 export type { DividerProps } from "./components/layout/Divider";
 export { Hero } from "./components/layout/Hero";
 export type { HeroProps, HeroType } from "./components/layout/Hero";
+export { Section } from "./components/layout/Section";
 export { Stack, Spacer } from "./components/layout/Stack";
 export type { StackProps, Spacing } from "./components/layout/Stack";
 
@@ -43,3 +50,5 @@ export type {
 
 export { Callout } from "./components/Callout";
 export type { CalloutProps, CalloutType } from "./components/Callout";
+export { Tabs } from "./components/TabGroup";
+export type { TabGroupProps, TabColor, TabProps, TabHeaderProps } from "./components/TabGroup";

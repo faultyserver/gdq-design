@@ -170,8 +170,8 @@
   --grey-900: #090909;
 
   /** static **/
-  --black: #000;
-  --twitch: #9146FF;
-  --white: #fff;
+  --black: #000000;
+  --twitch: #9146ff;
+  --white: #ffffff;
 
 }

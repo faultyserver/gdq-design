@@ -193,14 +193,12 @@
     ]
   },
   "staticColors": {
-    "white": "#fff",
-    "black": "#000",
+    "white": "#ffffff",
+    "black": "#000000",
     "twitch": "#9146FF"
   },
   "fonts": {
     "normal": "\"Source Sans Pro\", -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif",
     "accent": "Barlow, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif"
-  },
-  "lineHeights": { "solid": 1, "heading": 1.2, "body": 1.4 },
-  "fontSizes": ["12px", "14px", "16px", "24px", "32px", "48px"]
+  }
 }

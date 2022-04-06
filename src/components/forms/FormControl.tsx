@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as uuid from "uuid";
 
 import { Text, TextVariantColor } from "gdq-design";
 
@@ -14,7 +13,6 @@ export interface FormControlProps {
 
 export function FormControl(props: FormControlProps) {
   const { label, note, color = "normal", children } = props;
-  const [controlId] = React.useState(() => uuid.v4());
 
   return (
     <div className={styles.control}>

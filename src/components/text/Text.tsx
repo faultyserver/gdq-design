@@ -45,7 +45,7 @@ export interface TextProps {
 }
 
 export function Text(props: TextProps) {
-  const { tag: Tag = "div", variant = "text-md/normal", children, className } = props;
+  const { tag: Tag = "p", variant = "text-md/normal", children, className } = props;
   const [size, color] = getVariantPieces(variant);
 
   return (

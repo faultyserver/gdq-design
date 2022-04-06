@@ -14,11 +14,15 @@ export enum Accent {
 interface ThemeContextValue {
   theme: Theme;
   accent: Accent;
+  setTheme: (theme: Theme) => void;
+  setAccent: (accent: Accent) => void;
 }
 
-const ThemeContext = React.createContext<ThemeContextValue>({
+export const ThemeContext = React.createContext<ThemeContextValue>({
   theme: Theme.DARK,
-  accent: Accent.PINK,
+  accent: Accent.BLUE,
+  setTheme: () => null,
+  setAccent: () => null,
 });
 
 export function getThemeClass(theme: Theme, accent: Accent = Accent.BLUE): string {
@@ -32,15 +36,30 @@ export function useThemeClass(): string {
 }
 
 interface ThemeProviderProps {
-  theme: Theme;
-  accent: Accent;
+  theme?: Theme;
+  accent?: Accent;
   children: React.ReactNode;
 }
 
 export function ThemeProvider(props: ThemeProviderProps) {
-  const { theme, accent, children } = props;
+  const {
+    theme: controlledTheme = Theme.DARK,
+    accent: controlledAccent = Accent.BLUE,
+    children,
+  } = props;
 
-  const contextValue = React.useMemo(() => ({ theme, accent }), [theme, accent]);
+  const [theme, setTheme] = React.useState(controlledTheme);
+  const [accent, setAccent] = React.useState(controlledAccent);
+
+  React.useEffect(() => {
+    setTheme(controlledTheme);
+    setAccent(controlledAccent);
+  }, [controlledTheme, controlledAccent]);
+
+  const contextValue = React.useMemo(
+    () => ({ theme, accent, setTheme, setAccent }),
+    [theme, accent],
+  );
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 }

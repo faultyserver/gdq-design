@@ -1,13 +1,13 @@
 import * as React from "react";
 
 export interface BrandLogoProps {
-  width?: number;
-  height?: number;
+  width?: string | number;
+  height?: string | number;
   color?: string;
 }
 
 export function BrandLogo(props: BrandLogoProps) {
-  const { width = 202, height = 75, color = "currentColor" } = props;
+  const { width, height, color = "currentColor" } = props;
 
   return (
     <svg

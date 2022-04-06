@@ -15,6 +15,7 @@ module.exports = (_env, options) => {
     entry: {
       lib: "./index.tsx",
       example: "./example/index.tsx",
+      docs: "./docs/index.tsx",
     },
     output: {
       filename: PROD ? "[name].js" : "[name].[contenthash].js",

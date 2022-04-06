@@ -6,9 +6,13 @@ A React-based Design System for GDQ.
 
 **Components**
 
-- [x] Callout
-  - [ ] Dismissable
+- [ ] Image
+- [ ] Code
+- [x] Button
+  - [ ] Outline look
 - [ ] TextArea
+- [ ] Icons
+  - [ ] Expose remainder of `react-unicons`
 - [ ] DateTimeInput
 - [x] TextInput variations (validators)
   - [ ] Currency
@@ -19,18 +23,19 @@ A React-based Design System for GDQ.
 - [x] FormControl
   - [ ] Prefix
   - [ ] Suffix
+  - [ ] Size options
+- [x] Callout
+  - [ ] Dismissable
 - [ ] ProgressBar
-- [ ] Image
-- [x] Button
-  - [ ] Outline look
 - [ ] Table
-- [ ] Icons
-  - [ ] Expose remainder of `react-unicons`
 - [ ] Dropdown
 - [ ] Layer
   - [ ] Modal
   - [ ] Popout
-  - [ ]
+- [ ] List
+- [x] TabGroup
+  - [ ] Icons
+  - [ ] Badges
 
 **Generic**
 
