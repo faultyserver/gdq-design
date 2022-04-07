@@ -14,7 +14,6 @@ module.exports = (_env, options) => {
   return {
     entry: {
       lib: "./index.tsx",
-      example: "./example/index.tsx",
       docs: "./docs/index.tsx",
     },
     output: {

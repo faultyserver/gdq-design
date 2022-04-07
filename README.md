@@ -21,6 +21,9 @@ A React-based Design System for GDQ.
   - [ ] Email (can use native)
   - [ ] Username
   - [ ] Duration
+- [x] SelectInput
+  - [ ] Combobox
+  - [ ] MultiSelect
 - [x] FormControl
   - [ ] Prefix
   - [ ] Suffix

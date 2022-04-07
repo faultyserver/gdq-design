@@ -75,7 +75,7 @@
     "status-info-active": ["teal-560", "teal-530"],
     "status-info-translucent": ["opacity(teal-500, 15%)", "opacity(teal-600, 15%)"],
 
-    "status-default-background": ["grey-530", "grey-400"],
+    "status-default-background": ["grey-530", "grey-360"],
     "status-default-foreground": ["grey-100", "grey-900"],
     "status-default-hover": ["grey-560", "grey-460"],
     "status-default-active": ["grey-600", "grey-500"],

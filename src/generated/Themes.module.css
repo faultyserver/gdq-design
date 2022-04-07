@@ -145,7 +145,7 @@
   --status-info-hover: var(--teal-560);
   --status-info-active: var(--teal-530);
   --status-info-translucent: rgba(30, 134, 134, 15%);
-  --status-default-background: var(--grey-400);
+  --status-default-background: var(--grey-360);
   --status-default-foreground: var(--grey-900);
   --status-default-hover: var(--grey-460);
   --status-default-active: var(--grey-500);

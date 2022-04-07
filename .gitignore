@@ -3,7 +3,6 @@ dist/
 
 __pycache__/
 
-public/
 dist/
 
 yarn-error.log
