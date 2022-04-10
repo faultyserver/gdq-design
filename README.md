@@ -10,7 +10,7 @@ A React-based Design System for GDQ.
   - [ ] Backdrop effects (extrusion shadow)
 - [ ] Code
 - [x] Button
-  - [ ] Outline look
+  - [x] Outline look
 - [ ] TextArea
 - [ ] Icons
   - [ ] Expose remainder of `react-unicons`

@@ -134,7 +134,11 @@ function CheckboxComponent() {
           checkbox and an optional label together.
         </Text>
         <Card>
-          <Checkbox checked={checked} label="Remember Me" />
+          <Checkbox
+            checked={checked}
+            label="Remember Me"
+            onChange={(event) => setChecked(event.target.checked)}
+          />
         </Card>
         <Text>
           While a <code>Checkbox</code> on it's own is perfectly functional, forms should generally
@@ -184,6 +188,20 @@ function ButtonComponent() {
             <Button variant="primary">Submit</Button>
             <Button variant="default">Learn More</Button>
             <Button variant="link">Cancel</Button>
+          </Stack>
+        </Card>
+        <Header tag="h3" variant="header-md/normal">
+          Looks
+        </Header>
+        <Text>
+          <code>Button</code> provides multiple different looks to accommodate different situations.
+          In most cases, the default <code>filled</code> variant should be preferred, but other
+          looks may better suit different contexts.
+        </Text>
+        <Card>
+          <Stack spacing="space-md" direction="horizontal">
+            <Button variant="primary">Filled</Button>
+            <Button variant="info/outline">Outline</Button>
           </Stack>
         </Card>
       </Stack>
