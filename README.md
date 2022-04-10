@@ -12,7 +12,7 @@ A React-based Design System for GDQ.
 - [x] Button
   - [x] Outline look
 - [ ] TextArea
-- [ ] Icons
+- [x] Icons
   - [ ] Expose remainder of `react-unicons`
 - [ ] DateTimeInput
 - [x] TextInput variations (validators)

@@ -10,6 +10,7 @@ import {
   Header,
   RadioGroup,
   Section,
+  SelectInput,
   Stack,
   Text,
   TextInput,
@@ -19,6 +20,9 @@ import {
 
 import usePageAccent from "../usePageAccent";
 import PageHeader from "./PageHeader";
+import InfoCircle from "gdq-design/icons/InfoCircle";
+import ExclamationTriangle from "gdq-design/icons/ExclamationTriangle";
+import ExclamationOctagon from "gdq-design/icons/ExclamationOctagon";
 
 function Introduction() {
   return (
@@ -116,6 +120,86 @@ function TextInputComponent() {
             example input only and should generally be avoided where not necessary.
           </Text>
         </Callout>
+      </Stack>
+    </Section>
+  );
+}
+
+const SELECT_INPUT_OPTIONS = [
+  { name: "Option One", value: "one", subtext: "Description for option one", icon: InfoCircle },
+  {
+    name: "Option Two",
+    value: "two",
+    subtext: "Description for option two",
+    icon: ExclamationTriangle,
+  },
+  {
+    name: "Option Three",
+    value: "three",
+    subtext: "Description for option three",
+    icon: ExclamationOctagon,
+  },
+];
+
+function SelectInputComponent() {
+  const [selectedItem, setSelectedItem] = React.useState(SELECT_INPUT_OPTIONS[0]);
+  const [renderedItem, setRenderedItem] = React.useState(SELECT_INPUT_OPTIONS[0]);
+
+  return (
+    <Section>
+      <Stack spacing="space-lg">
+        <Header tag="h2">SelectInput</Header>
+        <Callout type="info">
+          <Text>
+            <code>SelectInput</code> does not currently support multiple selections nor combobox
+            (options + search) functionality, but these will be added in the future.
+          </Text>
+        </Callout>
+        <Text>
+          <code>SelectInput</code> is a choice-selection input that lets users choose options out of
+          a list.
+        </Text>
+        <Card>
+          <SelectInput
+            items={SELECT_INPUT_OPTIONS}
+            selectedItem={selectedItem}
+            // @ts-expect-error Item should know that it can have extra properties
+            onSelect={(item) => item != null && setSelectedItem(item)}
+          />
+        </Card>
+        <Text>
+          <code>SelectInput</code> is good for medium to large lists of options. In certain cases
+          with a very limited number of options, a <code>RadioGroup</code> may provide a better
+          experience for the user.
+        </Text>
+        <Text>
+          Items can choose how they get rendered in the dropdown list using the{" "}
+          <code>renderItem</code> prop. This will change both how the item appears in the dropdown
+          list, as well as in the input row itself.
+        </Text>
+        <Card>
+          <SelectInput
+            items={SELECT_INPUT_OPTIONS}
+            selectedItem={renderedItem}
+            renderItem={(item) => (
+              <Stack direction="horizontal" spacing="space-md">
+                {/* @ts-expect-error Item should know that it can have extra properties */}
+                <item.icon
+                  color="var(--text-normal)"
+                  size={20}
+                  style={{ marginTop: 2, marginLeft: 2 }}
+                />
+                <div>
+                  <Text>{item.name}</Text>
+                  {/* @ts-expect-error Item should know that it can have extra properties */}
+                  <Text variant="text-xs/normal">{item.subtext}</Text>
+                </div>
+              </Stack>
+            )}
+            // @ts-expect-error Item should know that it can have extra properties
+            onSelect={(item) => item != null && setRenderedItem(item)}
+          />
+        </Card>
       </Stack>
     </Section>
   );
@@ -352,6 +436,7 @@ export default function Forms() {
       <Introduction />
       <Example />
       <TextInputComponent />
+      <SelectInputComponent />
       <CheckboxComponent />
       <ButtonComponent />
       <RadioGroupComponent />
