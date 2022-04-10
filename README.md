@@ -42,6 +42,7 @@ A React-based Design System for GDQ.
   - [ ] Badges
 - [ ] NavBar
   - [ ] Dropdown
+- [ ] ScrollSpy ?
 
 **Generic**
 
