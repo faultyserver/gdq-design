@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useLocation, useNavigate } from "react-router";
-
 import {
   Accent,
   BrandLogo,
@@ -15,9 +14,9 @@ import {
   Theme,
   ThemeContext,
 } from "gdq-design";
-import ExclamationTriangle from "gdq-design/icons/ExclamationTriangle";
+
 import { IconProps } from "gdq-design/icons/IconProps";
-import InfoCircle from "gdq-design/icons/InfoCircle";
+import Pages from "./Pages";
 
 const THEME_OPTIONS = [
   { name: "Dark", value: Theme.DARK },
@@ -32,19 +31,21 @@ const ACCENT_OPTIONS = [
 
 type SidebarTab =
   | {
+      type?: "tab";
       name: string;
       route: string;
       color?: TabColor;
       icon?: React.ComponentType<IconProps>;
     }
-  | { header: string };
+  | { type: "header"; name: string };
 
 const SIDEBAR_TABS: SidebarTab[] = [
-  { header: "Guides" },
-  { name: "Home", route: "/" },
-  { header: "Components" },
-  { name: "Forms", route: "/forms" },
-  { name: "Typography", route: "/typography" },
+  { type: "header", name: "Guides" },
+  { name: "Home", route: Pages.HOME },
+  { type: "header", name: "Components" },
+  { name: "Common", route: Pages.COMMON },
+  { name: "Forms", route: Pages.FORMS },
+  { name: "Typography", route: Pages.TYPOGRAPHY },
 ];
 
 export default function DocsSidebar(props: { className: string }) {
@@ -80,16 +81,17 @@ export default function DocsSidebar(props: { className: string }) {
         </FormControl>
         <Divider />
         <Tabs.Group>
-          {SIDEBAR_TABS.map(({ name, route, color, header, icon }) =>
-            header != null ? (
-              <Tabs.Header label={header} />
+          {SIDEBAR_TABS.map((tab) =>
+            tab.type === "header" ? (
+              <Tabs.Header key={tab.name} label={tab.name} />
             ) : (
               <Tabs.Tab
-                label={name}
-                onClick={() => (console.log("navigating?"), navigate(route))}
-                color={color}
-                icon={icon}
-                selected={location.pathname === route}
+                key={tab.name}
+                label={tab.name}
+                onClick={() => (console.log("navigating?"), navigate(tab.route))}
+                color={tab.color}
+                icon={tab.icon}
+                selected={location.pathname === tab.route}
               />
             ),
           )}

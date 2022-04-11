@@ -1,5 +1,6 @@
 const Pages = {
   HOME: `/`,
+  COMMON: "/common",
   FORMS: `/forms`,
   TYPOGRAPHY: `/typography`,
 };

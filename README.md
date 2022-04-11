@@ -6,7 +6,7 @@ A React-based Design System for GDQ.
 
 **Components**
 
-- [ ] Image
+- [x] Image
   - [ ] Backdrop effects (extrusion shadow)
 - [ ] Code
 - [x] Button

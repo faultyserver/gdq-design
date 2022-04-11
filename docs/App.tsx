@@ -4,6 +4,7 @@ import { AppContainer } from "gdq-design";
 
 import DocsSidebar from "./DocsSidebar";
 import Pages from "./Pages";
+import Common from "./pages/Common";
 import Forms from "./pages/Forms";
 import Home from "./pages/Home";
 import Typography from "./pages/Typography";
@@ -19,6 +20,7 @@ export default function App() {
           <div className={styles.contentWidthContainer}>
             <Routes>
               <Route path={Pages.HOME} element={<Home />} />
+              <Route path={Pages.COMMON} element={<Common />} />
               <Route path={Pages.FORMS} element={<Forms />} />
               <Route path={Pages.TYPOGRAPHY} element={<Typography />} />
             </Routes>

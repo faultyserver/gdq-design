@@ -5,6 +5,8 @@ export { BrandLogo } from "./components/core/BrandLogo";
 export type { BrandLogoProps } from "./components/core/BrandLogo";
 export { Clickable } from "./components/core/Clickable";
 export type { ClickableProps } from "./components/core/Clickable";
+export { Image } from "./components/core/Image";
+export type { ImageProps, ImageLoadState } from "./components/core/Image";
 export {
   Accent,
   Theme,
@@ -14,7 +16,12 @@ export {
 } from "./components/core/ThemeProvider";
 
 export { Button } from "./components/forms/Button";
-export type { ButtonProps } from "./components/forms/Button";
+export type {
+  ButtonProps,
+  ButtonVariant,
+  ButtonVariantColor,
+  ButtonVariantLook,
+} from "./components/forms/Button";
 export { Checkbox } from "./components/forms/Checkbox";
 export type { CheckboxProps } from "./components/forms/Checkbox";
 export { FormControl } from "./components/forms/FormControl";
@@ -44,6 +51,7 @@ export { Header, Text } from "./components/text/Text";
 export type {
   HeaderProps,
   TextProps,
+  TextVariant,
   TextVariantColor,
   TextVariantSize,
 } from "./components/text/Text";

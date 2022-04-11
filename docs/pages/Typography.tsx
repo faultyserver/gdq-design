@@ -188,11 +188,21 @@ function AnchorComponent() {
         <Header tag="h2">Anchor</Header>
         <Text>
           <code>Anchor</code> is an inline component that renders links in a consistent style and
-          handles both external links and page transitions within a single app.
+          handles both external links and page transitions within a single app. <code>Anchor</code>{" "}
+          should generally not be used on it's own, and rather would exist within another component
+          like <code>Text</code> or <code>Header</code>.
         </Text>
         <Card>
-          <Anchor href="#">This is a link</Anchor>
+          <Text>
+            <Anchor href="#">This is a link</Anchor>
+          </Text>
         </Card>
+        <Text>
+          <code>Anchor</code> is only intended for actions that link the user to another navigable
+          page, either internal or external to the current application. Other actions like revealing
+          more content, or triggering a change in state should probably use <code>Clickable</code>{" "}
+          or <code>Button</code> instead.
+        </Text>
       </Stack>
     </Section>
   );

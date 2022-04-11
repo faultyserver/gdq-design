@@ -24,7 +24,10 @@ export interface ClickableProps {
   htmlFor?: string;
 }
 
-export function Clickable(props: ClickableProps) {
+export const Clickable = React.forwardRef(function Clickable(
+  props: ClickableProps,
+  ref: React.ForwardedRef<HTMLElement>,
+) {
   const {
     tag: Tag = "div",
     role = "button",
@@ -35,10 +38,20 @@ export function Clickable(props: ClickableProps) {
     ...extraProps
   } = props;
 
-  const ref = React.useRef<HTMLElement>(null);
+  const innerRef = React.useRef<HTMLElement | null>(null);
+
+  function setRef(element: HTMLElement) {
+    innerRef.current = element;
+    if (ref == null) return;
+    if (typeof ref === "function") {
+      ref(element);
+    } else {
+      ref.current = element;
+    }
+  }
 
   function handleKeyDown(event: React.KeyboardEvent) {
-    const element = ref.current;
+    const element = innerRef.current;
     if (element == null) return;
 
     if (event.key === " " || event.key === "Enter") {
@@ -49,10 +62,10 @@ export function Clickable(props: ClickableProps) {
 
   return (
     <Tag
-      // The dynamic Tag here makes TypeScript think this should be a LegacyRef when it's all the same
+      // The dynamic Tag here makes TypeScript think this should be a string when it's all the same
       // as the normal MutableRefObject from `useRef`.
       // @ts-expect-error
-      ref={ref}
+      ref={setRef}
       role={role}
       tabIndex={tabIndex}
       className={className}
@@ -63,4 +76,4 @@ export function Clickable(props: ClickableProps) {
       {children}
     </Tag>
   );
-}
+});

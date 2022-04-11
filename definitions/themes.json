@@ -34,6 +34,7 @@
     "background-secondary": ["grey-700", "grey-160"],
     "background-tertiary": ["grey-600", "grey-260"],
     "background-accent": ["grey-800", "grey-200"],
+    "background-mod-subtle": ["opacity(black, 10%)", "opacity(grey-900, 10%)"],
 
     "text-normal": ["grey-100", "grey-900"],
     "text-secondary": ["grey-500", "grey-560"],

@@ -65,6 +65,7 @@
   --background-secondary: var(--grey-700);
   --background-tertiary: var(--grey-600);
   --background-accent: var(--grey-800);
+  --background-mod-subtle: rgba(0, 0, 0, 10%);
   --text-normal: var(--grey-100);
   --text-secondary: var(--grey-500);
   --text-success: var(--green-600);
@@ -111,6 +112,7 @@
   --background-secondary: var(--grey-160);
   --background-tertiary: var(--grey-260);
   --background-accent: var(--grey-200);
+  --background-mod-subtle: rgba(9, 9, 9, 10%);
   --text-normal: var(--grey-900);
   --text-secondary: var(--grey-560);
   --text-success: var(--green-630);
