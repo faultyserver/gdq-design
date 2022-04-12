@@ -32,6 +32,8 @@ export { RadioGroup } from "./components/forms/RadioGroup";
 export type { RadioGroupProps } from "./components/forms/RadioGroup";
 export { SelectInput } from "./components/forms/SelectInput";
 export type { SelectInputProps } from "./components/forms/SelectInput";
+export { TextArea } from "./components/forms/TextArea";
+export type { TextAreaProps } from "./components/forms/TextArea";
 export { TextInput } from "./components/forms/TextInput";
 export type { TextInputProps } from "./components/forms/TextInput";
 

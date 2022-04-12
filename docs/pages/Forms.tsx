@@ -13,6 +13,7 @@ import {
   SelectInput,
   Stack,
   Text,
+  TextArea,
   TextInput,
   Theme,
   ThemeContext,
@@ -120,6 +121,46 @@ function TextInputComponent() {
             example input only and should generally be avoided where not necessary.
           </Text>
         </Callout>
+      </Stack>
+    </Section>
+  );
+}
+
+function TextAreaComponent() {
+  const [value, setValue] = React.useState("");
+  const [limitedValue, setLimitedValue] = React.useState("");
+
+  return (
+    <Section>
+      <Stack spacing="space-lg">
+        <Header tag="h2">TextArea</Header>
+        <Text>
+          For textual input that is longer than just a few words, <code>TextArea</code> provides a
+          larger, multi-line, resizable input area for users to write out content of any length.
+        </Text>
+        <Card>
+          <TextArea
+            placeholder="Enter a paragraph"
+            value={value}
+            onChange={(event) => setValue(event.target.value)}
+          />
+        </Card>
+        <Text>
+          By default, <code>TextArea</code> will render 5 rows of text before scrolling, and the
+          user can resize the input vertically. Both of these can be overridden with the{" "}
+          <code>rows</code> and <code>resize</code> props.
+        </Text>
+        <Text>
+          <code>TextArea</code> also accepts a <code>maxLength</code> prop to show a progressive
+          visual indication for a maximum input length as the user's types.
+        </Text>
+        <Card>
+          <TextArea
+            maxLength={100}
+            value={limitedValue}
+            onChange={(event) => setLimitedValue(event.target.value)}
+          />
+        </Card>
       </Stack>
     </Section>
   );
@@ -436,6 +477,7 @@ export default function Forms() {
       <Introduction />
       <Example />
       <TextInputComponent />
+      <TextAreaComponent />
       <SelectInputComponent />
       <CheckboxComponent />
       <ButtonComponent />

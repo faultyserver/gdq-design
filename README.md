@@ -9,6 +9,7 @@ A React-based Design System for GDQ.
 - [x] Image
   - [ ] Backdrop effects (extrusion shadow)
 - [ ] Code
+- [ ] Box (like Card, but just an outline)
 - [x] Button
   - [x] Outline look
 - [ ] TextArea

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Typography from "./pages/Typography";
 
 import styles from "./App.mod.css";
+import Layout from "./pages/Layout";
 
 export default function App() {
   return (
@@ -20,9 +21,10 @@ export default function App() {
           <div className={styles.contentWidthContainer}>
             <Routes>
               <Route path={Pages.HOME} element={<Home />} />
-              <Route path={Pages.COMMON} element={<Common />} />
-              <Route path={Pages.FORMS} element={<Forms />} />
-              <Route path={Pages.TYPOGRAPHY} element={<Typography />} />
+              <Route path={Pages.COMPONENTS_COMMON} element={<Common />} />
+              <Route path={Pages.COMPONENTS_FORMS} element={<Forms />} />
+              <Route path={Pages.COMPONENTS_LAYOUT} element={<Layout />} />
+              <Route path={Pages.COMPONENTS_TYPOGRAPHY} element={<Typography />} />
             </Routes>
           </div>
         </main>

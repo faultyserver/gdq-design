@@ -42,10 +42,12 @@ type SidebarTab =
 const SIDEBAR_TABS: SidebarTab[] = [
   { type: "header", name: "Guides" },
   { name: "Home", route: Pages.HOME },
+  { name: "Usage", route: Pages.GUIDES_USAGE },
   { type: "header", name: "Components" },
-  { name: "Common", route: Pages.COMMON },
-  { name: "Forms", route: Pages.FORMS },
-  { name: "Typography", route: Pages.TYPOGRAPHY },
+  { name: "Common", route: Pages.COMPONENTS_COMMON },
+  { name: "Forms", route: Pages.COMPONENTS_FORMS },
+  { name: "Layout", route: Pages.COMPONENTS_LAYOUT },
+  { name: "Typography", route: Pages.COMPONENTS_TYPOGRAPHY },
 ];
 
 export default function DocsSidebar(props: { className: string }) {
