@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./TextInput.mod.css";
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  type?: "text" | "number" | "password" | "email" | "date" | "datetime-local";
+  type?: "text" | "number" | "password" | "email" | "date" | "time" | "datetime-local";
 }
 
 export const TextInput = React.forwardRef(

@@ -32,7 +32,7 @@ A React-based Design System for GDQ.
   - [ ] Validations
 - [x] Callout
   - [ ] Dismissable
-- [ ] ProgressBar
+- [x] ProgressBar
 - [ ] Table
 - [ ] Dropdown
 - [ ] Layer

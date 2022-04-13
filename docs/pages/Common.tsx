@@ -7,6 +7,7 @@ import {
   Clickable,
   Header,
   Image,
+  ProgressBar,
   Section,
   Stack,
   Text,
@@ -203,6 +204,43 @@ function AppContainerComponent() {
   );
 }
 
+function ProgressBarComponent() {
+  return (
+    <Section>
+      <Stack spacing="space-lg">
+        <Header tag="h2">ProgressBar</Header>
+        <Text>
+          <code>ProgressBar</code> is a visual indicator of some percentage value. It supports
+          multiple bars by providing an array of values for the <code>progress</code> prop, and each
+          bar can be given an independent color.
+        </Text>
+        <Card>
+          <Stack spacing="space-lg">
+            <ProgressBar progress={[{ value: 40 }]} />
+            <ProgressBar
+              progress={[
+                { value: 30, color: "success" },
+                { value: 30, color: "warning" },
+                { value: 30, color: "danger" },
+              ]}
+            />
+          </Stack>
+        </Card>
+        <Text>
+          The size of the bars can also be controlled with the <code>size</code> prop, picking from
+          one of <code>normal</code> or <code>large</code>
+        </Text>
+        <Card>
+          <Stack spacing="space-lg">
+            <ProgressBar progress={[{ value: 50 }]} size="normal" />
+            <ProgressBar progress={[{ value: 70 }]} size="large" />
+          </Stack>
+        </Card>
+      </Stack>
+    </Section>
+  );
+}
+
 export default function Common() {
   usePageAccent(Accent.PURPLE);
 
@@ -217,6 +255,7 @@ export default function Common() {
       <ClickableComponent />
       <ThemeProviderComponent />
       <AppContainerComponent />
+      <ProgressBarComponent />
     </Stack>
   );
 }
