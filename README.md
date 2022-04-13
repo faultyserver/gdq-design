@@ -26,8 +26,8 @@ A React-based Design System for GDQ.
   - [ ] Combobox
   - [ ] MultiSelect
 - [x] FormControl
-  - [ ] Prefix
-  - [ ] Suffix
+  - [x] Prefix
+  - [x] Suffix
   - [ ] Size options
   - [ ] Validations
 - [x] Callout

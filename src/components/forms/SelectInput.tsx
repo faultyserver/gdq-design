@@ -57,21 +57,22 @@ export function SelectInput<T>(props: SelectInputProps<T>) {
         {selectedItem != null ? renderItem(selectedItem) : renderPlaceholder()}
         <ChevronIcon size={24} className={styles.chevron} />
       </Clickable>
-      {isOpen && (
-        <ul {...getMenuProps()} className={styles.dropdown}>
-          {items.map((item, index) => (
-            <li
-              key={`${item}${index}`}
-              {...getItemProps({ item, index })}
-              className={classNames(styles.itemContainer, {
-                [styles.itemHighlighted]: highlightedIndex === index,
-              })}
-            >
-              {renderItem(item)}
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        {...getMenuProps()}
+        className={classNames(styles.dropdown, { [styles.dropdownOpen]: isOpen })}
+      >
+        {items.map((item, index) => (
+          <li
+            key={`${item}${index}`}
+            {...getItemProps({ item, index })}
+            className={classNames(styles.itemContainer, {
+              [styles.itemHighlighted]: highlightedIndex === index,
+            })}
+          >
+            {renderItem(item)}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

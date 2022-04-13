@@ -20,7 +20,7 @@
 .chevron {
   position: absolute;
   right: 6px;
-  top: 2px;
+  top: 4px;
   height: 32px;
   width: 32px;
 }
@@ -35,9 +35,14 @@
   border: 2px solid var(--accent-primary);
   border-top: none;
   list-style-type: none;
+  display: none;
 
   &:focus {
     outline: none;
+  }
+
+  &.dropdownOpen {
+    display: block;
   }
 }
 

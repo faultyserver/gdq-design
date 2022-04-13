@@ -158,8 +158,10 @@ function TextInputVariations() {
           a number of seconds.
         </Text>
         <Card>
-          <DurationInput value={duration} onChange={setDuration} />
-          <Text>Duration value is {duration} seconds</Text>
+          <Stack spacing="space-md">
+            <DurationInput value={duration} onChange={setDuration} />
+            <Text>Duration value is {duration} seconds</Text>
+          </Stack>
         </Card>
         <Header tag="h3" variant="header-md/normal">
           CurrencyInput
@@ -170,8 +172,10 @@ function TextInputVariations() {
           and providing a <code>number</code> representation of the value in return.
         </Text>
         <Card>
-          <CurrencyInput value={currency} onChange={setCurrency} />
-          <Text>Currency value is {currency}</Text>
+          <Stack spacing="space-md">
+            <CurrencyInput value={currency} onChange={setCurrency} />
+            <Text>Currency value is {currency}</Text>
+          </Stack>
         </Card>
       </Stack>
     </Section>
@@ -455,20 +459,31 @@ function FormControlComponent() {
           consistent fashion.
         </Text>
         <Card>
-          <FormControl label="Username" note="Usernames may only contain letters and numbers.">
-            <TextInput placeholder="gdqmonitor" />
-          </FormControl>
+          <Stack spacing="space-lg">
+            <FormControl label="Username" note="Usernames may only contain letters and numbers.">
+              <TextInput placeholder="gdqmonitor" />
+            </FormControl>
+            <FormControl
+              label="Select an Option"
+              note="Selecting an option won't do anything on this page"
+            >
+              <RadioGroup
+                options={RADIO_GROUP_OPTIONS}
+                value={selectedRadio}
+                onChange={(event) => setSelectedRadio(event.target.value)}
+              />
+            </FormControl>
+          </Stack>
         </Card>
+        <Text>
+          <code>FormControl</code> also provides props for attaching <code>prefix</code> and{" "}
+          <code>suffix</code> elements onto the input row, providing additional information for
+          inputs that might have structure that the user is not sure if they should add or not, such
+          as URL hostnames for links.
+        </Text>
         <Card>
-          <FormControl
-            label="Select an Option"
-            note="Selecting an option won't do anything on this page"
-          >
-            <RadioGroup
-              options={RADIO_GROUP_OPTIONS}
-              value={selectedRadio}
-              onChange={(event) => setSelectedRadio(event.target.value)}
-            />
+          <FormControl label="Twitch URL" prefix={<Text>twitch.tv/</Text>}>
+            <TextInput />{" "}
           </FormControl>
         </Card>
       </Stack>
@@ -494,26 +509,6 @@ function FormSwitchComponent() {
             onChange={(event) => setChecked(event.target.checked)}
             note="Do something super secret. Doesn't actually do anything, but you can pretend that it does."
           />
-        </Card>
-        <Text>
-          When using multiple buttons on a page, consider how they draw attention and the hierarchy
-          of actions that can be performed. In general, use a <code>primary</code> Button for the
-          main action in a form, and have all other actions use either <code>default</code> or{" "}
-          <code>link</code>. Depending on the context of the action, other variants may be more
-          appropriate, like <code>danger</code> for destructive actions, or <code>success</code> for
-          indicating agreement.
-        </Text>
-        <Text>
-          The general hierarchy for Buttons in a form should be <code>primary</code> for a submit
-          action, then <code>default</code> for auxiliary actions (like Learn More or View Item),
-          then <code>link</code> for canceling actions.
-        </Text>
-        <Card>
-          <Stack spacing="space-md" direction="horizontal">
-            <Button variant="primary">Submit</Button>
-            <Button variant="default">Learn More</Button>
-            <Button variant="link">Cancel</Button>
-          </Stack>
         </Card>
       </Stack>
     </Section>

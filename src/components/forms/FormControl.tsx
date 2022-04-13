@@ -17,11 +17,13 @@ export interface FormControlProps {
   note?: React.ReactNode;
   color?: TextVariantColor;
   size?: FormControlSize;
+  prefix?: React.ReactNode;
+  suffix?: React.ReactNode;
   children: React.ReactNode;
 }
 
 export function FormControl(props: FormControlProps) {
-  const { label, note, color = "normal", size = "normal", children } = props;
+  const { label, note, color = "normal", size = "normal", prefix, suffix, children } = props;
   const labelSize = LABEL_SIZES[size];
 
   return (
@@ -31,7 +33,11 @@ export function FormControl(props: FormControlProps) {
           {label}
         </Text>
       ) : null}
-      {children}
+      <div className={styles.inputRow}>
+        {prefix != null ? <div className={styles.attachment}>{prefix}</div> : null}
+        {children}
+        {suffix != null ? <div className={styles.attachment}>{suffix}</div> : null}
+      </div>
       {note != null ? (
         <Text className={styles.note} variant={`text-sm/${color}`}>
           {note}

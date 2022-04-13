@@ -6,3 +6,18 @@
 .note {
   margin-top: 4px;
 }
+
+.inputRow {
+  display: flex;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.attachment {
+  flex: 0 1 auto;
+  align-self: stretch;
+  padding: 4.5px 8px;
+  background-color: var(--accent-primary);
+}

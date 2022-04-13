@@ -8,8 +8,10 @@
 }
 
 .icon {
+  display: block;
   color: var(--accent-primary);
   flex: 0 0 auto;
+  margin-top: 1.5px;
 }
 
 .label {
