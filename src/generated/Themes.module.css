@@ -106,6 +106,7 @@
   --status-default-hover: var(--grey-560);
   --status-default-active: var(--grey-600);
   --status-default-translucent: rgba(125, 128, 128, 20%);
+  color-scheme: dark;
 }
 
 :global(.theme-light) {
@@ -154,5 +155,6 @@
   --status-default-hover: var(--grey-460);
   --status-default-active: var(--grey-500);
   --status-default-translucent: rgba(176, 178, 178, 30%);
+  color-scheme: light;
 }
 

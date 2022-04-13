@@ -15,13 +15,13 @@ A React-based Design System for GDQ.
 - [x] TextArea
 - [x] Icons
   - [ ] Expose remainder of `react-unicons`
-- [ ] DateTimeInput
+- [x] DateTimeInput
+  - [ ] Use a library for a better picker experience
 - [x] TextInput variations (validators)
-  - [ ] Currency
-  - [ ] Phone
+  - [x] Currency
   - [x] Email (can use native)
-  - [ ] Username
   - [x] Duration
+  - [ ] Phoone
 - [x] SelectInput
   - [ ] Combobox
   - [ ] MultiSelect
@@ -29,6 +29,7 @@ A React-based Design System for GDQ.
   - [ ] Prefix
   - [ ] Suffix
   - [ ] Size options
+  - [ ] Validations
 - [x] Callout
   - [ ] Dismissable
 - [ ] ProgressBar

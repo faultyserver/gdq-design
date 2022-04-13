@@ -79,6 +79,8 @@ def write_theme_tokens(file_path: Path, theme_map: ThemeMap):
             file.write(f":global(.theme-{theme}) {{\n")
             for token in tokens:
                 write_token(file, token)
+            # Include a `color-scheme` definition to hint at browser user agents
+            file.write(f"  color-scheme: {theme};\n")
             file.write("}\n\n")
 
 

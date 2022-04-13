@@ -37,6 +37,8 @@ export type { TextAreaProps } from "./components/forms/TextArea";
 export { TextInput } from "./components/forms/TextInput";
 export type { TextInputProps } from "./components/forms/TextInput";
 
+export { CurrencyInput } from "./components/forms/formatted_inputs/CurrencyInput";
+export type { CurrencyInputProps } from "./components/forms/formatted_inputs/CurrencyInput";
 export { DurationInput } from "./components/forms/formatted_inputs/DurationInput";
 export type { DurationInputProps } from "./components/forms/formatted_inputs/DurationInput";
 

@@ -5,6 +5,7 @@ import {
   Callout,
   Card,
   Checkbox,
+  CurrencyInput,
   DurationInput,
   FormControl,
   FormSwitch,
@@ -107,6 +108,8 @@ function TextInputComponent() {
             <TextInput placeholder="Enter some text" />
             <TextInput type="password" placeholder="Password" />
             <TextInput type="number" defaultValue={0.0} />
+            <TextInput type="email" defaultValue="someone@example.com" />
+            <TextInput type="datetime-local" defaultValue="4155550000" />
           </Stack>
         </Card>
         <Text>
@@ -129,6 +132,7 @@ function TextInputComponent() {
 
 function TextInputVariations() {
   const [duration, setDuration] = React.useState(0);
+  const [currency, setCurrency] = React.useState<number | undefined>(15);
 
   return (
     <Section>
@@ -155,6 +159,7 @@ function TextInputVariations() {
         </Text>
         <Card>
           <DurationInput value={duration} onChange={setDuration} />
+          <Text>Duration value is {duration} seconds</Text>
         </Card>
         <Header tag="h3" variant="header-md/normal">
           CurrencyInput
@@ -165,7 +170,8 @@ function TextInputVariations() {
           and providing a <code>number</code> representation of the value in return.
         </Text>
         <Card>
-          <DurationInput value={duration} onChange={setDuration} />
+          <CurrencyInput value={currency} onChange={setCurrency} />
+          <Text>Currency value is {currency}</Text>
         </Card>
       </Stack>
     </Section>

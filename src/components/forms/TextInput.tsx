@@ -4,19 +4,22 @@ import classNames from "classnames";
 import styles from "./TextInput.mod.css";
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  type?: "text" | "number" | "password" | "email";
+  type?: "text" | "number" | "password" | "email" | "date" | "datetime-local";
 }
 
-export function TextInput(props: TextInputProps) {
-  const { type = "text", value, className, onChange, ...nativeProps } = props;
+export const TextInput = React.forwardRef(
+  (props: TextInputProps, ref: React.ForwardedRef<HTMLInputElement>) => {
+    const { type = "text", value, className, onChange, ...nativeProps } = props;
 
-  return (
-    <input
-      {...nativeProps}
-      type={type}
-      value={value}
-      onChange={onChange}
-      className={classNames(styles.input, props.className)}
-    />
-  );
-}
+    return (
+      <input
+        {...nativeProps}
+        ref={ref}
+        type={type}
+        value={value}
+        onChange={onChange}
+        className={classNames(styles.input, props.className)}
+      />
+    );
+  },
+);
