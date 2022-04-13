@@ -1,13 +1,22 @@
-import classNames from "classnames";
 import * as React from "react";
+import classNames from "classnames";
 
 import styles from "./TextInput.mod.css";
 
-export interface TextInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "type"> {
-  type?: "text" | "number" | "password";
+export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  type?: "text" | "number" | "password" | "email";
 }
 
 export function TextInput(props: TextInputProps) {
-  const { type = "text" } = props;
-  return <input {...props} type={type} className={classNames(styles.input, props.className)} />;
+  const { type = "text", value, className, onChange, ...nativeProps } = props;
+
+  return (
+    <input
+      {...nativeProps}
+      type={type}
+      value={value}
+      onChange={onChange}
+      className={classNames(styles.input, props.className)}
+    />
+  );
 }

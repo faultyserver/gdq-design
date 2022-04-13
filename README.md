@@ -8,20 +8,20 @@ A React-based Design System for GDQ.
 
 - [x] Image
   - [ ] Backdrop effects (extrusion shadow)
-- [ ] Code
+- [x] Code
 - [ ] Box (like Card, but just an outline)
 - [x] Button
   - [x] Outline look
-- [ ] TextArea
+- [x] TextArea
 - [x] Icons
   - [ ] Expose remainder of `react-unicons`
 - [ ] DateTimeInput
 - [x] TextInput variations (validators)
   - [ ] Currency
   - [ ] Phone
-  - [ ] Email (can use native)
+  - [x] Email (can use native)
   - [ ] Username
-  - [ ] Duration
+  - [x] Duration
 - [x] SelectInput
   - [ ] Combobox
   - [ ] MultiSelect
@@ -48,3 +48,4 @@ A React-based Design System for GDQ.
 **Generic**
 
 - [ ] Disabled states
+- [ ] Consistent event handlers for inputs

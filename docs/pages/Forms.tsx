@@ -5,6 +5,7 @@ import {
   Callout,
   Card,
   Checkbox,
+  DurationInput,
   FormControl,
   FormSwitch,
   Header,
@@ -121,6 +122,51 @@ function TextInputComponent() {
             example input only and should generally be avoided where not necessary.
           </Text>
         </Callout>
+      </Stack>
+    </Section>
+  );
+}
+
+function TextInputVariations() {
+  const [duration, setDuration] = React.useState(0);
+
+  return (
+    <Section>
+      <Stack spacing="space-lg">
+        <Header tag="h2">TextInput Variations</Header>
+        <Text>
+          The design system provides a number of wrapping components around <code>TextInput</code>{" "}
+          to facilitate common types of structured input beyond plain text and numbers. These
+          components have mostly the same interface as <code>TextInput</code>, but with adjusted{" "}
+          <code>value</code> and <code>onChange</code> props to match the appropriate type of
+          information being gathered.
+        </Text>
+        <Text>
+          Structured input is a step beyond an input mask, where the value of the input is
+          transformed from one type to another before being passed to the change handler.
+        </Text>
+        <Header tag="h3" variant="header-md/normal">
+          DurationInput
+        </Header>
+        <Text>
+          <code>DurationInput</code> handles inputting time spans in a human-readable format,
+          providing a plain <code>number</code> to the consumer representing the entered duration as
+          a number of seconds.
+        </Text>
+        <Card>
+          <DurationInput value={duration} onChange={setDuration} />
+        </Card>
+        <Header tag="h3" variant="header-md/normal">
+          CurrencyInput
+        </Header>
+        <Text>
+          <code>CurrencyInput</code> handles currency values, specifically in the US Dollar format
+          (for now), automatically formatting the value with thousands separators for readability,
+          and providing a <code>number</code> representation of the value in return.
+        </Text>
+        <Card>
+          <DurationInput value={duration} onChange={setDuration} />
+        </Card>
       </Stack>
     </Section>
   );
@@ -477,6 +523,7 @@ export default function Forms() {
       <Introduction />
       <Example />
       <TextInputComponent />
+      <TextInputVariations />
       <TextAreaComponent />
       <SelectInputComponent />
       <CheckboxComponent />
