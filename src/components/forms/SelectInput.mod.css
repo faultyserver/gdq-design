@@ -54,3 +54,8 @@
 .itemHighlighted {
   background-color: var(--background-primary);
 }
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 60%;
+}

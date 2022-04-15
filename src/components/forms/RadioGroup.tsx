@@ -1,4 +1,5 @@
 import * as React from "react";
+import classNames from "classnames";
 import * as uuid from "uuid";
 
 import { Stack, Text } from "gdq-design";
@@ -11,17 +12,19 @@ import { Clickable } from "../core/Clickable";
 interface Option<T> {
   value: T;
   label: string | React.ReactNode;
+  disabled?: boolean;
 }
 
 interface RadioItemProps<T> {
   selected: boolean;
   option: Option<T>;
+  disabled: boolean;
   groupId: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => unknown;
 }
 
 function RadioItem<T>(props: RadioItemProps<T>) {
-  const { selected, option, groupId, onChange } = props;
+  const { selected, option, disabled, groupId, onChange } = props;
   const { value, label } = option;
 
   const [inputId] = React.useState(() => uuid.v4());
@@ -35,10 +38,17 @@ function RadioItem<T>(props: RadioItemProps<T>) {
     );
 
   return (
-    <Clickable tag="label" aria-selected={selected} className={styles.radioItem} htmlFor={inputId}>
+    <Clickable
+      tag="label"
+      disabled={disabled}
+      aria-selected={selected}
+      className={classNames(styles.radioItem, { [styles.disabled]: disabled })}
+      htmlFor={inputId}
+    >
       <input
         type="radio"
         name={groupId}
+        disabled={disabled}
         onChange={onChange}
         id={inputId}
         value={String(value)}
@@ -53,11 +63,12 @@ function RadioItem<T>(props: RadioItemProps<T>) {
 export interface RadioGroupProps<T> {
   value: T | undefined;
   options: Option<T>[];
+  disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => unknown;
 }
 
 export function RadioGroup<T>(props: RadioGroupProps<T>) {
-  const { value, options, onChange } = props;
+  const { value, options, disabled = false, onChange } = props;
   const [groupId] = React.useState(() => uuid.v4());
 
   return (
@@ -67,6 +78,7 @@ export function RadioGroup<T>(props: RadioGroupProps<T>) {
           key={String(option.value)}
           selected={value === option.value}
           option={option}
+          disabled={(disabled || option.disabled) ?? false}
           groupId={groupId}
           onChange={onChange}
         />

@@ -21,3 +21,8 @@
   padding: 4.5px 8px;
   background-color: var(--accent-primary);
 }
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 60%;
+}

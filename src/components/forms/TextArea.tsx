@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import * as React from "react";
+import classNames from "classnames";
 
 import styles from "./TextArea.mod.css";
 
@@ -35,6 +35,7 @@ type TextAreaResizeType = keyof typeof RESIZE_CLASSES;
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   resize?: TextAreaResizeType;
+  disabled?: boolean;
 }
 
 export const TextArea = React.forwardRef(
@@ -44,6 +45,7 @@ export const TextArea = React.forwardRef(
       maxLength,
       rows = 3,
       resize = "vertical",
+      disabled = false,
       className,
       onChange,
       ...nativeProps
@@ -51,9 +53,10 @@ export const TextArea = React.forwardRef(
     const length = value?.toString().length;
 
     return (
-      <div className={styles.container}>
+      <div className={classNames(styles.container, { [styles.disabled]: disabled })}>
         <textarea
           ref={ref}
+          disabled={disabled}
           {...nativeProps}
           value={value}
           maxLength={maxLength}

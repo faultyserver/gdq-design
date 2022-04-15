@@ -125,6 +125,22 @@ function TextInputComponent() {
             example input only and should generally be avoided where not necessary.
           </Text>
         </Callout>
+        <Text>
+          Informational states about a <code>TextInput</code> can use the <code>color</code> prop,
+          which adjusts the border color of the input. This works well for small spaces where no
+          other information explaining the state can be added, but generally prefer{" "}
+          <code>FormControl</code> to automatically format these states and provide more contextual
+          information like an error message.
+        </Text>
+        <Card>
+          <Stack spacing="space-md">
+            <TextInput color="success" placeholder="Success state" />
+            <TextInput color="warning" placeholder="Warning state" />
+            <TextInput color="danger" placeholder="Danger state" />
+            <TextInput color="info" placeholder="Info state" />
+            <TextInput color="default" placeholder="Default state" />
+          </Stack>
+        </Card>
       </Stack>
     </Section>
   );
@@ -515,6 +531,85 @@ function FormSwitchComponent() {
   );
 }
 
+function DisabledStates() {
+  const [selectedItem, setSelectedItem] = React.useState(SELECT_INPUT_OPTIONS[0]);
+  const [textValue, setTextValue] = React.useState("");
+  const [checked, setChecked] = React.useState(true);
+  const [switchChecked, setSwitchChecked] = React.useState(true);
+  const [selectedRadio, setSelectedRadio] = React.useState(RADIO_GROUP_OPTIONS[0].value);
+
+  return (
+    <Section>
+      <Stack>
+        <Header tag="h2">Disabled States</Header>
+        <Text>
+          All Form components have a <code>disabled</code> prop that prevents users from interacting
+          with the component.
+        </Text>
+        <Card>
+          <Stack spacing="space-lg">
+            <TextInput disabled placeholder="no typing here" />
+            <TextArea
+              disabled
+              placeholder="Can't type here either"
+              value={textValue}
+              onChange={(event) => setTextValue(event.target.value)}
+            />
+            <SelectInput
+              disabled
+              items={SELECT_INPUT_OPTIONS}
+              selectedItem={selectedItem}
+              // @ts-expect-error Item should know that it can have extra properties
+              onSelect={(item) => item != null && setSelectedItem(item)}
+            />
+            <Checkbox
+              disabled
+              checked={checked}
+              label="Remember Me"
+              onChange={(event) => setChecked(event.target.checked)}
+            />
+            <RadioGroup
+              disabled
+              options={RADIO_GROUP_OPTIONS}
+              value={selectedRadio}
+              onChange={(event) => setSelectedRadio(event.target.value)}
+            />
+            <FormControl
+              disabled
+              label="Form Control"
+              note={
+                <>
+                  The contained also needs to have <code>disabled</code> set to become
+                  non-interactive.
+                </>
+              }
+            >
+              <TextInput disabled placeholder="gdqmonitor" />
+            </FormControl>
+            <FormSwitch
+              label="Enable a super secret setting"
+              disabled
+              checked={checked}
+              onChange={(event) => setChecked(event.target.checked)}
+              note="Do something super secret. Doesn't actually do anything, but you can pretend that it does."
+            />
+            <Button disabled variant="primary">
+              Submit
+            </Button>
+          </Stack>
+        </Card>
+        <Text>
+          When building forms with disabled components, remember that disabled items are not
+          included in the tab order of the page, and screenreaders may skip over them entirely,
+          depending on the type of item. As such, use additional information where possible to
+          indicate why a component is disabled, like realtime error messages on inputs to explain a
+          disabled submit button.
+        </Text>
+      </Stack>
+    </Section>
+  );
+}
+
 export default function Forms() {
   usePageAccent(Accent.PINK);
 
@@ -532,6 +627,7 @@ export default function Forms() {
       <RadioGroupComponent />
       <FormControlComponent />
       <FormSwitchComponent />
+      <DisabledStates />
     </Stack>
   );
 }

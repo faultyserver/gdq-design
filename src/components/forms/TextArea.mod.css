@@ -2,7 +2,17 @@
   position: relative;
 }
 
+.disabled {
+  cursor: not-allowed;
+  opacity: 60%;
+
+  & .input {
+    cursor: not-allowed;
+  }
+}
+
 .input {
+  display: block;
   background-color: var(--background-accent);
   color: var(--text-normal);
   border: 2px solid var(--accent-primary);

@@ -28,6 +28,7 @@ function defaultRenderItem<T>(item: SelectItem<T>) {
 export interface SelectInputProps<T> {
   items: SelectItem<T>[];
   selectedItem?: SelectItem<T>;
+  disabled?: boolean;
   className?: string;
   renderItem?: (item: SelectItem<T>) => React.ReactNode;
   renderPlaceholder?: () => React.ReactNode;
@@ -38,6 +39,7 @@ export function SelectInput<T>(props: SelectInputProps<T>) {
   const {
     items,
     selectedItem,
+    disabled = false,
     className,
     renderItem = defaultRenderItem,
     renderPlaceholder = defaultRenderPlaceholder,
@@ -52,8 +54,13 @@ export function SelectInput<T>(props: SelectInputProps<T>) {
   const ChevronIcon = isOpen ? ChevronUp : ChevronDown;
 
   return (
-    <div className={classNames(styles.container, className, { [styles.open]: isOpen })}>
-      <Clickable className={styles.input} {...getToggleButtonProps()}>
+    <div
+      className={classNames(styles.container, className, {
+        [styles.open]: isOpen,
+        [styles.disabled]: disabled,
+      })}
+    >
+      <Clickable className={styles.input} disabled={disabled} {...getToggleButtonProps()}>
         {selectedItem != null ? renderItem(selectedItem) : renderPlaceholder()}
         <ChevronIcon size={24} className={styles.chevron} />
       </Clickable>

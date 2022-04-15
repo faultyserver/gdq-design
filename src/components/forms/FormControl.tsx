@@ -1,4 +1,5 @@
 import * as React from "react";
+import classNames from "classnames";
 
 import { Text, TextVariantColor } from "gdq-design";
 
@@ -19,15 +20,25 @@ export interface FormControlProps {
   size?: FormControlSize;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
+  disabled?: boolean;
   children: React.ReactNode;
 }
 
 export function FormControl(props: FormControlProps) {
-  const { label, note, color = "normal", size = "normal", prefix, suffix, children } = props;
+  const {
+    label,
+    note,
+    color = "normal",
+    size = "normal",
+    prefix,
+    suffix,
+    disabled = false,
+    children,
+  } = props;
   const labelSize = LABEL_SIZES[size];
 
   return (
-    <div className={styles.control}>
+    <div className={classNames(styles.control, { [styles.disabled]: disabled })}>
       {label != null ? (
         <Text tag="label" variant={`${labelSize}/${color}`} className={styles.label}>
           {label}

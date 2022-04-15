@@ -17,6 +17,7 @@ type InteractiveARIARole =
 export interface ClickableProps {
   tag?: "div" | "span" | "label" | "a";
   role?: InteractiveARIARole;
+  disabled?: boolean;
   tabIndex?: -1 | 0;
   children: React.ReactNode;
   className?: string;
@@ -31,6 +32,7 @@ export const Clickable = React.forwardRef(function Clickable(
   const {
     tag: Tag = "div",
     role = "button",
+    disabled = false,
     tabIndex = 0,
     children,
     className,
@@ -67,10 +69,10 @@ export const Clickable = React.forwardRef(function Clickable(
       // @ts-expect-error
       ref={setRef}
       role={role}
-      tabIndex={tabIndex}
+      tabIndex={disabled ? -1 : tabIndex}
       className={className}
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
+      onClick={!disabled ? onClick : undefined}
+      onKeyDown={!disabled ? handleKeyDown : undefined}
       {...extraProps}
     >
       {children}

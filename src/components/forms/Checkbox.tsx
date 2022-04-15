@@ -1,4 +1,5 @@
 import * as React from "react";
+import classNames from "classnames";
 import * as uuid from "uuid";
 
 import { Clickable, Text } from "gdq-design";
@@ -10,11 +11,12 @@ import styles from "./Checkbox.mod.css";
 export interface CheckboxProps {
   checked: boolean;
   label?: string | React.ReactNode;
+  disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => unknown;
 }
 
 export function Checkbox(props: CheckboxProps) {
-  const { checked, label, onChange } = props;
+  const { checked, label, disabled = false, onChange } = props;
   const [inputId] = React.useState(() => uuid.v4());
 
   const Icon = checked ? CheckboxChecked : CheckboxUnchecked;
@@ -29,16 +31,18 @@ export function Checkbox(props: CheckboxProps) {
     <Clickable
       tag="label"
       tabIndex={0}
+      disabled={disabled}
       aria-checked={checked}
-      className={styles.checkbox}
+      className={classNames(styles.checkbox, { [styles.disabled]: disabled })}
       htmlFor={inputId}
     >
       <input
         type="checkbox"
-        onChange={onChange}
+        style={{ display: "none" }}
         id={inputId}
         checked={checked}
-        style={{ display: "none" }}
+        disabled={disabled}
+        onChange={onChange}
       />
       <Icon className={styles.icon} size={24} />
       {labelNode}
