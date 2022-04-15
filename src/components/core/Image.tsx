@@ -45,12 +45,10 @@ export const Image = React.forwardRef(function Image(
     setLoadState(ImageLoadState.LOADING);
 
     function handleLoad(event: Event) {
-      console.log("Image loaded");
       setLoadState(ImageLoadState.LOADED);
     }
 
     function handleError(event: ErrorEvent) {
-      console.log("Image errored");
       setLoadState(ImageLoadState.ERROR);
     }
 

@@ -16,6 +16,16 @@
   color: var(--_callout-icon-color);
 }
 
+.dismissBar {
+  flex: 0 0 32px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dismissIcon {
+  color: var(--_callout-content-color);
+}
+
 .content {
   padding: 8px;
   color: var(--_callout-content-color);

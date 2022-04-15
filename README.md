@@ -21,7 +21,7 @@ A React-based Design System for GDQ.
   - [x] Currency
   - [x] Email (can use native)
   - [x] Duration
-  - [ ] Phoone
+  - [ ] Phone
 - [x] SelectInput
   - [ ] Combobox
   - [ ] MultiSelect
@@ -48,5 +48,5 @@ A React-based Design System for GDQ.
 
 **Generic**
 
-- [ ] Disabled states
+- [x] Disabled states
 - [ ] Consistent event handlers for inputs

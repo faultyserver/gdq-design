@@ -90,7 +90,7 @@ export default function DocsSidebar(props: { className: string }) {
               <Tabs.Tab
                 key={tab.name}
                 label={tab.name}
-                onClick={() => (console.log("navigating?"), navigate(tab.route))}
+                onClick={() => navigate(tab.route)}
                 color={tab.color}
                 icon={tab.icon}
                 selected={location.pathname === tab.route}
