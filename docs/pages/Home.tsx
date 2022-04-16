@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Accent, Callout, Card, Header, Stack, Text } from "gdq-design";
+import { Accent, Callout, Card, ConfirmModal, Header, openModal, Stack, Text } from "gdq-design";
 
 import usePageAccent from "../usePageAccent";
 import PageHeader from "./PageHeader";

@@ -17,7 +17,7 @@
   background-color: var(--_button-background);
   color: var(--_button-text);
 
-  &:hover(:not(:disabled)) {
+  &:hover:not(:disabled) {
     background-color: var(--_button-background-hover);
   }
 
@@ -31,7 +31,7 @@
   border: 1px solid var(--_button-background);
   color: var(--text-normal);
 
-  &:hover(:not(:disabled)) {
+  &:hover:not(:disabled) {
     border-color: var(--_button-background-hover);
     background-color: var(--_button-background-translucent);
   }

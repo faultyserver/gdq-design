@@ -4,6 +4,7 @@ const Pages = {
   COMPONENTS_COMMON: "/common",
   COMPONENTS_FORMS: `/forms`,
   COMPONENTS_LAYOUT: `/layout`,
+  COMPONENTS_MODALS: `/modals`,
   COMPONENTS_TYPOGRAPHY: `/typography`,
 };
 

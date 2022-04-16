@@ -47,6 +47,7 @@ const SIDEBAR_TABS: SidebarTab[] = [
   { name: "Common", route: Pages.COMPONENTS_COMMON },
   { name: "Forms", route: Pages.COMPONENTS_FORMS },
   { name: "Layout", route: Pages.COMPONENTS_LAYOUT },
+  { name: "Modals", route: Pages.COMPONENTS_MODALS },
   { name: "Typography", route: Pages.COMPONENTS_TYPOGRAPHY },
 ];
 

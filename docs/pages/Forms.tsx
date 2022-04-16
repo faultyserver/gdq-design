@@ -540,7 +540,7 @@ function DisabledStates() {
 
   return (
     <Section>
-      <Stack>
+      <Stack spacing="space-lg">
         <Header tag="h2">Disabled States</Header>
         <Text>
           All Form components have a <code>disabled</code> prop that prevents users from interacting
@@ -589,8 +589,8 @@ function DisabledStates() {
             <FormSwitch
               label="Enable a super secret setting"
               disabled
-              checked={checked}
-              onChange={(event) => setChecked(event.target.checked)}
+              checked={switchChecked}
+              onChange={(event) => setSwitchChecked(event.target.checked)}
               note="Do something super secret. Doesn't actually do anything, but you can pretend that it does."
             />
             <Button disabled variant="primary">

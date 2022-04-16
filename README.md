@@ -7,9 +7,7 @@ A React-based Design System for GDQ.
 **Components**
 
 - [x] Image
-  - [ ] Backdrop effects (extrusion shadow)
 - [x] Code
-- [ ] Box (like Card, but just an outline)
 - [x] Button
   - [x] Outline look
 - [x] TextArea
@@ -21,27 +19,29 @@ A React-based Design System for GDQ.
   - [x] Currency
   - [x] Email (can use native)
   - [x] Duration
-  - [ ] Phone
+  - [x] Phone
 - [x] SelectInput
   - [ ] Combobox
   - [ ] MultiSelect
 - [x] FormControl
   - [x] Prefix
   - [x] Suffix
-  - [ ] Size options
-  - [ ] Validations
+  - [x] Size options
+  - [x] Validations
 - [x] Callout
-  - [ ] Dismissable
+  - [x] Dismissable
 - [x] ProgressBar
-- [ ] Table
-- [ ] Dropdown
-- [ ] Layer
-  - [ ] Modal
-  - [ ] Popout
-- [ ] List
 - [x] TabGroup
   - [x] Icons
-  - [ ] Badges
+  - [x] Badges
+- [ ] Effects (extrusion shadow)
+- [ ] Box (like Card, but just an outline)
+- [ ] Table
+- [ ] Dropdown
+- [x] Layer
+  - [x] Modal
+  - [ ] Popout
+- [ ] List
 - [ ] NavBar
   - [ ] Dropdown
 - [ ] ScrollSpy ?

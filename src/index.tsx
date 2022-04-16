@@ -44,6 +44,21 @@ export type { CurrencyInputProps } from "./components/forms/formatted_inputs/Cur
 export { DurationInput } from "./components/forms/formatted_inputs/DurationInput";
 export type { DurationInputProps } from "./components/forms/formatted_inputs/DurationInput";
 
+export { Layers } from "./components/layers/Layers";
+export {
+  useLayersStore,
+  createLayer,
+  removeLayer,
+  popLayer,
+} from "./components/layers/LayersStore";
+export type { LayersStoreState, LayerSpec } from "./components/layers/LayersStore";
+
+export { ConfirmModal } from "./components/modals/ConfirmModal";
+export type { ConfirmModalProps } from "./components/modals/ConfirmModal";
+export { Modal } from "./components/modals/Modal";
+export type { ModalProps } from "./components/modals/Modal";
+export { openModal } from "./components/modals/openModal";
+
 export { Card } from "./components/layout/Card";
 export type { CardProps, CardLevel } from "./components/layout/Card";
 export { Divider } from "./components/layout/Divider";
