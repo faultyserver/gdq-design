@@ -36,7 +36,7 @@
     "background-accent": ["grey-800", "grey-200"],
     "background-mod-subtle": ["opacity(black, 10%)", "opacity(grey-900, 10%)"],
     "background-mod-backdrop": ["opacity(black, 70%)", "opacity(grey-900, 70%)"],
-    "background-highlight": ["opacity(grey-100, 10%)", "opacity(grey-900, 15%)"],
+    "background-highlight": ["opacity(grey-100, 10%)", "opacity(grey-900, 10%)"],
 
     "text-normal": ["grey-100", "grey-900"],
     "text-secondary": ["grey-500", "grey-560"],
