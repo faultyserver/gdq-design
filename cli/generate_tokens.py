@@ -38,7 +38,9 @@ def write_color_tokens(file_path: Path, tokens: BaseTokens):
         file.write("}\n")
 
 
-def write_font_tokens(file_path: Path, fonts: t.Dict[str, str]):
+def write_font_tokens(
+    file_path: Path, fonts: t.Dict[str, str], font_weights: t.Dict[str, int]
+):
     with open(file_path, "w") as file:
         file.write(
             """/** Generated Font Tokens. Do not edit manually **/\n\n:root {\n"""
@@ -46,6 +48,9 @@ def write_font_tokens(file_path: Path, fonts: t.Dict[str, str]):
 
         for (name, stack) in fonts.items():
             file.write(f"  --font-{name}: {stack};\n")
+
+        for (name, weight) in font_weights.items():
+            file.write(f"  --font-weight-{name}: {weight};\n")
 
         file.write("}\n")
 
@@ -89,6 +94,8 @@ config = Config(TOKEN_PATH, THEME_PATH)
 print(f"Writing color tokens to {GENERATED_CSS_COLORS_PATH}")
 write_color_tokens(GENERATED_CSS_COLORS_PATH, config.base_tokens)
 print(f"Writing font tokens to {GENERATED_CSS_FONTS_PATH}")
-write_font_tokens(GENERATED_CSS_FONTS_PATH, config.base_tokens.fonts)
+write_font_tokens(
+    GENERATED_CSS_FONTS_PATH, config.base_tokens.fonts, config.base_tokens.fontWeights
+)
 print(f"Writing themes to {GENERATED_CSS_COLORS_PATH}")
 write_theme_tokens(GENERATED_CSS_THEMES_PATH, config.themes)

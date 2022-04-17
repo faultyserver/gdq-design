@@ -3,7 +3,7 @@
   padding: 8px 16px;
   font-family: var(--font-accent);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   cursor: pointer;
 
@@ -21,7 +21,7 @@
     background-color: var(--_button-background-hover);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background-color: var(--_button-background-active);
   }
 }
@@ -36,7 +36,7 @@
     background-color: var(--_button-background-translucent);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     border-color: var(--_button-background-active);
     background-coor: var(--_button-background-translucent);
   }

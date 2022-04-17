@@ -30,6 +30,7 @@ class BaseTokens:
     description: str
     colors: t.Dict[str, BaseColorToken]
     fonts: t.Dict[str, str]
+    fontWeights: t.Dict[str, int]
 
 
 @dataclass
@@ -93,6 +94,7 @@ class Config:
                 description=raw["description"],
                 colors=color_tokens,
                 fonts=raw["fonts"],
+                fontWeights=raw["fontWeights"],
             )
 
     def resolve_token(self, value):

@@ -1,7 +1,7 @@
 .anchor {
   text-decoration: underline;
   color: var(--text-link);
-  font-weight: 700;
+  font-weight: var(--font-weight-semibold);
 
   &:hover {
     color: var(--text-normal);

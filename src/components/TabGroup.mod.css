@@ -43,7 +43,7 @@
   margin-bottom: 8px;
   color: var(--_tab-color);
   font-family: var(--font-accent);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: 14px;
   text-transform: uppercase;
 }
