@@ -35,3 +35,15 @@ export function popLayer() {
     return { layers: newLayers };
   });
 }
+
+/**
+ * Subscribe to the LayersStore, returning the LayerSpec for the given layer.
+ * This is good for listening to when a Layer gets removed from the store to
+ * perform some other action (like toggling an open/close button).
+ *
+ * If this hook returns a value, the layer is visible. Otherwise, if the layer
+ * is not visible, it returns undefined.
+ */
+export function useLayerSubscription(name: string) {
+  return useLayersStore((state) => state.layers.find((layer) => layer.name === name));
+}

@@ -1,18 +1,20 @@
 import * as React from "react";
 import * as uuid from "uuid";
 
-import { Modal, createLayer } from "gdq-design";
-import { ModalProps, ModalRenderProps } from "./Modal";
+import { createLayer, removeLayer } from "gdq-design";
+import { Modal, ModalProps, ModalRenderProps } from "./Modal";
 
 export function openModal(
   render: (props: ModalRenderProps) => React.ReactNode,
-  options: Omit<ModalProps, "name" | "render"> = {},
+  options: Omit<ModalProps, "close" | "render"> = {},
 ): string {
-  const name = uuid.v4();
+  const name = `modal-${uuid.v4()}`;
 
   createLayer({
     name,
-    render: () => <Modal {...options} name={name} render={(props) => render(props)} />,
+    render: () => (
+      <Modal {...options} render={(props) => render(props)} close={() => removeLayer(name)} />
+    ),
   });
 
   return name;

@@ -31,19 +31,22 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   variant?: ButtonVariant;
 }
 
-export function Button(props: ButtonProps) {
-  const { variant = "default", ...nativeProps } = props;
-  const [color, look = "filled"] = getVariantPieces(variant);
+export const Button = React.forwardRef(
+  (props: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) => {
+    const { variant = "default", ...nativeProps } = props;
+    const [color, look = "filled"] = getVariantPieces(variant);
 
-  return (
-    <button
-      {...nativeProps}
-      className={classNames(
-        styles.button,
-        LOOK_VARIANTS[look],
-        COLOR_VARIANTS[color],
-        props.className,
-      )}
-    />
-  );
-}
+    return (
+      <button
+        {...nativeProps}
+        ref={ref}
+        className={classNames(
+          styles.button,
+          LOOK_VARIANTS[look],
+          COLOR_VARIANTS[color],
+          props.className,
+        )}
+      />
+    );
+  },
+);

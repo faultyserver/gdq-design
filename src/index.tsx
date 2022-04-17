@@ -50,6 +50,7 @@ export {
   createLayer,
   removeLayer,
   popLayer,
+  useLayerSubscription,
 } from "./components/layers/LayersStore";
 export type { LayersStoreState, LayerSpec } from "./components/layers/LayersStore";
 
@@ -58,6 +59,10 @@ export type { ConfirmModalProps } from "./components/modals/ConfirmModal";
 export { Modal } from "./components/modals/Modal";
 export type { ModalProps } from "./components/modals/Modal";
 export { openModal } from "./components/modals/openModal";
+
+export { Popout } from "./components/popouts/Popout";
+export type { PopoutProps } from "./components/popouts/Popout";
+export { openPopout, usePopout } from "./components/popouts/openPopout";
 
 export { Card } from "./components/layout/Card";
 export type { CardProps, CardLevel } from "./components/layout/Card";
