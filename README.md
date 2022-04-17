@@ -34,17 +34,15 @@ A React-based Design System for GDQ.
 - [x] TabGroup
   - [x] Icons
   - [x] Badges
+- [x] Layer
+  - [x] Modal
+  - [x] Popout
 - [ ] Effects (extrusion shadow)
 - [ ] Box (like Card, but just an outline)
 - [ ] Table
-- [ ] Dropdown
-- [x] Layer
-  - [x] Modal
-  - [ ] Popout
 - [ ] List
 - [ ] NavBar
   - [ ] Dropdown
-- [ ] ScrollSpy ?
 
 **Generic**
 

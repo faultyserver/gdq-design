@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as uuid from "uuid";
 
-import { createLayer, LayerSpec, removeLayer, useLayerSubscription } from "../layers/LayersStore";
+import { createLayer, removeLayer, useLayerSubscription } from "../layers/LayersStore";
 import { Popout, PopoutProps, PopoutRenderProps } from "./Popout";
 
 export function openPopout(
@@ -25,11 +25,19 @@ export function openPopout(
   return name;
 }
 
+/**
+ * Create a Popout that is tied to the lifecycle of the calling component. When
+ * the parent unmounts, the Popout will automatically be closed.
+ *
+ * Returns a 2-tuple of:
+ *   - a callback function to open the Popout (e.g., from a button click)
+ *   - a boolean of whether the Popout is currently open.
+ */
 export function usePopout(
   render: (props: PopoutRenderProps) => React.ReactNode,
   targetRef: React.RefObject<Element>,
   options: Omit<PopoutProps, "close" | "render" | "target"> = {},
-): [() => unknown, boolean, LayerSpec | undefined] {
+): [() => unknown, boolean] {
   const nameRef = React.useRef(`popout-${uuid.v4()}`);
 
   const open = React.useCallback(() => {
@@ -50,5 +58,5 @@ export function usePopout(
   const layer = useLayerSubscription(nameRef.current);
   const isOpen = layer != null;
 
-  return [open, isOpen, layer];
+  return [open, isOpen];
 }
