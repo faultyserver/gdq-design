@@ -37,7 +37,7 @@ A React-based Design System for GDQ.
 - [x] Layer
   - [x] Modal
   - [x] Popout
-  - [ ] Tooltip
+  - [x] Tooltip
 - [ ] Effects (extrusion shadow)
 - [ ] Table
 - [ ] List
