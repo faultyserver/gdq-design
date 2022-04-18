@@ -43,8 +43,7 @@ function RadioItem<T>(props: RadioItemProps<T>) {
       disabled={disabled}
       aria-selected={selected}
       className={classNames(styles.radioItem, { [styles.disabled]: disabled })}
-      htmlFor={inputId}
-    >
+      htmlFor={inputId}>
       <input
         type="radio"
         name={groupId}

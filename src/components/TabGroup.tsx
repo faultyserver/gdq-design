@@ -32,8 +32,7 @@ export function Tab(props: TabProps) {
   return (
     <Clickable
       className={classNames(styles.tab, TAB_COLORS[color], { [styles.selected]: selected })}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {Icon != null ? <Icon className={styles.icon} /> : null}
       <div className={styles.label}>{label}</div>
       {badge != null ? <div className={styles.badge}>{badge}</div> : null}

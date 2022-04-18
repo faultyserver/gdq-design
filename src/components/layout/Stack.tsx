@@ -68,8 +68,7 @@ export function Stack(props: StackProps) {
         align != null ? STACK_ALIGNMENT[align] : undefined,
         DIRECTION_CLASSES[direction],
         className,
-      )}
-    >
+      )}>
       {children}
     </div>
   );

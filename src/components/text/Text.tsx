@@ -80,8 +80,7 @@ export function Header(props: HeaderProps) {
       className={classNames(styles.header, SIZE_VARIANTS[size], COLOR_VARIANTS[color], className, {
         [styles.uppercase]: uppercase,
         [styles.withMargin]: withMargin,
-      })}
-    >
+      })}>
       {children}
     </Tag>
   );

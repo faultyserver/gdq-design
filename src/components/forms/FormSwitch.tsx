@@ -36,16 +36,14 @@ export function FormSwitch(props: FormSwitchProps) {
       className={classNames(styles.container, {
         [styles.checked]: checked,
         [styles.disabled]: disabled,
-      })}
-    >
+      })}>
       <Clickable
         tag="label"
         disabled={disabled}
         tabIndex={0}
         aria-checked={checked}
         className={styles.mainRow}
-        htmlFor={inputId}
-      >
+        htmlFor={inputId}>
         <Text variant="header-sm/normal" className={styles.label}>
           {label}
         </Text>

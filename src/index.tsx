@@ -44,6 +44,8 @@ export type { CurrencyInputProps } from "./components/forms/formatted_inputs/Cur
 export { DurationInput } from "./components/forms/formatted_inputs/DurationInput";
 export type { DurationInputProps } from "./components/forms/formatted_inputs/DurationInput";
 
+export { PositionedLayer } from "./components/layers/PositionedLayer";
+export type { PositionedLayerProps, Align, Attach } from "./components/layers/PositionedLayer";
 export { Layers } from "./components/layers/Layers";
 export {
   useLayersStore,
@@ -63,6 +65,14 @@ export { openModal } from "./components/modals/openModal";
 export { Popout } from "./components/popouts/Popout";
 export type { PopoutProps } from "./components/popouts/Popout";
 export { openPopout, usePopout } from "./components/popouts/openPopout";
+
+export { Tooltip, useTooltip } from "./components/tooltips/Tooltip";
+export type {
+  TooltipProps,
+  TooltipRenderProps,
+  TooltipTargetProps,
+  TooltipOptions,
+} from "./components/tooltips/Tooltip";
 
 export { Card } from "./components/layout/Card";
 export type { CardProps, CardLevel } from "./components/layout/Card";

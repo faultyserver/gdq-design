@@ -9,11 +9,14 @@ import {
   Section,
   Stack,
   Text,
+  Tooltip,
   usePopout,
+  useTooltip,
 } from "gdq-design";
 
 import usePageAccent from "../usePageAccent";
 import PageHeader from "./PageHeader";
+import ImageQuestion from "gdq-design/icons/ImageQuestion";
 
 function Introduction() {
   return (
@@ -136,6 +139,56 @@ function PopoutComponent() {
   );
 }
 
+function TooltipComponent() {
+  const [tooltipProps] = useTooltip<HTMLButtonElement>("Some tooltip text");
+  const [customTooltipProps] = useTooltip<HTMLButtonElement>(
+    <Stack direction="horizontal" spacing="space-md" align="center">
+      <ImageQuestion size={24} />
+      <div>
+        <Text variant="header-xs/normal">This one has an icon</Text>
+        <Text variant="text-sm/secondary">And some descriptive text</Text>
+      </div>
+    </Stack>,
+  );
+
+  return (
+    <Section>
+      <Stack spacing="space-lg">
+        <Header tag="h2">Tooltip</Header>
+        <Text>
+          <code>Tooltip</code> is the lowest-level layer for providing supplemental information to
+          the target element. They are only visible when the user is directly interacting with the
+          target, either by hovering it with a pointer or focusing it with a keyboard.
+        </Text>
+        <Card>
+          <Tooltip<HTMLButtonElement> render="Some tooltip text">
+            {(tooltipProps) => (
+              <Button variant="primary" {...tooltipProps}>
+                Hover for Tooltip
+              </Button>
+            )}
+          </Tooltip>
+        </Card>
+        <Text>
+          As such an ephemeral layer, <code>Tooltip</code> should only be used for
+          immediately-useful information, like a name for an icon, or a quick descriptive sentence
+          to expand on a single word, and should <em>not</em> be used for any kind of interaction.
+        </Text>
+        <Text>
+          The simplest method of rendering a <code>Tooltip</code> is just providing a string, but
+          tooltips can render any kind of content just by providing a component or function as the
+          render prop.
+        </Text>
+        <Card>
+          <Button variant="primary" {...customTooltipProps}>
+            Hover for Custom Tooltip
+          </Button>
+        </Card>
+      </Stack>
+    </Section>
+  );
+}
+
 export default function Layers() {
   usePageAccent(Accent.BLUE);
 
@@ -145,6 +198,7 @@ export default function Layers() {
       <Introduction />
       <ConfirmModalComponent />
       <PopoutComponent />
+      <TooltipComponent />
     </Stack>
   );
 }

@@ -73,8 +73,7 @@ export const Clickable = React.forwardRef(function Clickable(
       className={className}
       onClick={!disabled ? onClick : undefined}
       onKeyDown={!disabled ? handleKeyDown : undefined}
-      {...extraProps}
-    >
+      {...extraProps}>
       {children}
     </Tag>
   );

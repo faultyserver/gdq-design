@@ -34,8 +34,7 @@ export function Checkbox(props: CheckboxProps) {
       disabled={disabled}
       aria-checked={checked}
       className={classNames(styles.checkbox, { [styles.disabled]: disabled })}
-      htmlFor={inputId}
-    >
+      htmlFor={inputId}>
       <input
         type="checkbox"
         style={{ display: "none" }}

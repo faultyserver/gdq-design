@@ -72,8 +72,7 @@ function Example() {
             </FormControl>
             <FormControl
               label="Password"
-              note="Pick something secure. Or better yet, use a password manager."
-            >
+              note="Pick something secure. Or better yet, use a password manager.">
               <TextInput type="password" />
             </FormControl>
             <FormSwitch
@@ -481,8 +480,7 @@ function FormControlComponent() {
             </FormControl>
             <FormControl
               label="Select an Option"
-              note="Selecting an option won't do anything on this page"
-            >
+              note="Selecting an option won't do anything on this page">
               <RadioGroup
                 options={RADIO_GROUP_OPTIONS}
                 value={selectedRadio}
@@ -582,8 +580,7 @@ function DisabledStates() {
                   The contained also needs to have <code>disabled</code> set to become
                   non-interactive.
                 </>
-              }
-            >
+              }>
               <TextInput disabled placeholder="gdqmonitor" />
             </FormControl>
             <FormSwitch

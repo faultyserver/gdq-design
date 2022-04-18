@@ -16,8 +16,7 @@ function renderMaxLengthIndicator(length?: number, maxLength?: number) {
       className={classNames(styles.lengthLimit, {
         [styles.nearLimit]: nearLimit,
         [styles.overLimit]: overLimit,
-      })}
-    >
+      })}>
       <span className={styles.length}>{length}</span> /
       <span className={styles.limit}>{maxLength}</span>
     </div>
@@ -62,8 +61,7 @@ export const TextArea = React.forwardRef(
           maxLength={maxLength}
           rows={rows}
           onChange={onChange}
-          className={classNames(styles.input, className, RESIZE_CLASSES[resize])}
-        ></textarea>
+          className={classNames(styles.input, className, RESIZE_CLASSES[resize])}></textarea>
         {renderMaxLengthIndicator(length, maxLength)}
       </div>
     );

@@ -15,8 +15,7 @@ export function BrandLogo(props: BrandLogoProps) {
       height={height}
       viewBox="0 0 202 75"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
       <path
         d="M113.486 24.9098H96.6843C93.5426 24.9098 90.4008 25.8574 87.9421 27.6174L78.3804 34.5217L86.1664 44.1336H103.377C105.973 44.1336 108.295 42.5091 108.978 40.2076L113.486 24.9098Z"
         fill={color}

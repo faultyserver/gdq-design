@@ -97,8 +97,7 @@ export const Image = React.forwardRef(function Image(
       className={classNames(styles.imageContainer, className, {
         [styles.error]: loadState === ImageLoadState.ERROR,
       })}
-      style={{ width: props.width, height: props.height }}
-    >
+      style={{ width: props.width, height: props.height }}>
       {inner}
       <img ref={setRef} className={styles.image} src={src} alt={alt} {...nativeProps} />
     </div>
