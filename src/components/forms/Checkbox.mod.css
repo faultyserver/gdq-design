@@ -2,8 +2,8 @@
   display: block;
   display: flex;
   align-items: start;
-  gap: 8px;
-  padding: 4px 0;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
 }
 
 .icon {

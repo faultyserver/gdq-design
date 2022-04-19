@@ -8,7 +8,7 @@
   background-color: var(--background-accent);
   color: var(--text-normal);
   border: 2px solid var(--accent-primary);
-  padding: 5.5px 8px;
+  padding: 5.5px var(--space-md);
   font-family: var(--font-normal);
   font-size: 18px;
 }
@@ -48,7 +48,7 @@
 
 .itemContainer {
   margin: 0;
-  padding: 5.5px 8px;
+  padding: 5.5px var(--space-md);
 }
 
 .itemHighlighted {

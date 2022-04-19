@@ -63,7 +63,7 @@
   line-height: 18px;
 
   &.withMargin {
-    margin-bottom: 4px;
+    margin-bottom: var(--space-sm);
   }
 }
 
@@ -73,7 +73,7 @@
   line-height: 24px;
 
   &.withMargin {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -83,7 +83,7 @@
   line-height: 30px;
 
   &.withMargin {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -93,7 +93,7 @@
   line-height: 36px;
 
   &.withMargin {
-    margin-bottom: 8px;
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -103,7 +103,7 @@
   line-height: 44px;
 
   &.withMargin {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-lg);
   }
 }
 
@@ -113,7 +113,7 @@
   line-height: 50px;
 
   &.withMargin {
-    margin-bottom: 16px;
+    margin-bottom: var(--space-lg);
   }
 }
 

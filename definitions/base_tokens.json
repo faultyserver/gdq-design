@@ -205,5 +205,16 @@
     "medium": 400,
     "semibold": 600,
     "bold": 700
+  },
+  "spacings": {
+    "xxxs": 0.5,
+    "xxs": 1,
+    "xs": 2,
+    "sm": 4,
+    "md": 8,
+    "lg": 16,
+    "xl": 32,
+    "xxl": 48,
+    "xxxl": 64
   }
 }

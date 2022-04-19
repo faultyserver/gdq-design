@@ -14,6 +14,7 @@ THEME_PATH = DEFINITIONS_ROOT / "themes.json"
 GENERATED_ROOT = PROJECT_ROOT / "src" / "generated"
 GENERATED_CSS_COLORS_PATH = GENERATED_ROOT / "ColorTokens.module.css"
 GENERATED_CSS_FONTS_PATH = GENERATED_ROOT / "FontTokens.module.css"
+GENERATED_CSS_SPACINGS_PATH = GENERATED_ROOT / "Spacing.module.css"
 GENERATED_CSS_THEMES_PATH = GENERATED_ROOT / "Themes.module.css"
 
 
@@ -51,6 +52,18 @@ def write_font_tokens(
 
         for (name, weight) in font_weights.items():
             file.write(f"  --font-weight-{name}: {weight};\n")
+
+        file.write("}\n")
+
+
+def write_spacing_tokens(file_path: Path, spacings: t.Dict[str, float]):
+    with open(file_path, "w") as file:
+        file.write(
+            """/** Generated Font Tokens. Do not edit manually **/\n\n:root {\n"""
+        )
+
+        for (name, value) in spacings.items():
+            file.write(f"  --space-{name}: {value}px;\n")
 
         file.write("}\n")
 
@@ -97,5 +110,7 @@ print(f"Writing font tokens to {GENERATED_CSS_FONTS_PATH}")
 write_font_tokens(
     GENERATED_CSS_FONTS_PATH, config.base_tokens.fonts, config.base_tokens.fontWeights
 )
+print(f"Writing spacing tokens to {GENERATED_CSS_SPACINGS_PATH}")
+write_spacing_tokens(GENERATED_CSS_SPACINGS_PATH, config.base_tokens.spacings)
 print(f"Writing themes to {GENERATED_CSS_COLORS_PATH}")
 write_theme_tokens(GENERATED_CSS_THEMES_PATH, config.themes)

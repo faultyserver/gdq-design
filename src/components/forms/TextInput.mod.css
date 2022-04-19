@@ -2,7 +2,7 @@
   background-color: var(--background-accent);
   color: var(--text-normal);
   border: 2px solid var(--_input-border);
-  padding: 4px 8px;
+  padding: var(--space-sm) var(--space-md);
   font-family: var(--font-normal);
   font-size: 18px;
   width: 100%;

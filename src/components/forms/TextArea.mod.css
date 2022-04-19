@@ -16,7 +16,7 @@
   background-color: var(--background-accent);
   color: var(--text-normal);
   border: 2px solid var(--accent-primary);
-  padding: 4px 8px;
+  padding: var(--space-sm) var(--space-md);
   font-family: var(--font-normal);
   font-size: 18px;
   width: 100%;
@@ -28,12 +28,12 @@
 
 .lengthLimit {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: var(--space-md);
+  right: var(--space-md);
   background-color: transparent;
   pointer-events: none;
   color: var(--text-secondary);
-  padding: 0 8px;
+  padding: 0 var(--space-md);
 
   & .length {
     margin-right: 1px;

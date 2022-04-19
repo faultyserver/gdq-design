@@ -1,10 +1,10 @@
 .label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-sm);
 }
 
 .note {
-  margin-top: 4px;
+  margin-top: var(--space-sm);
 }
 
 .inputRow {
@@ -18,7 +18,7 @@
 .attachment {
   flex: 0 1 auto;
   align-self: stretch;
-  padding: 4.5px 8px;
+  padding: 4.5px var(--space-md);
   background-color: var(--accent-primary);
 }
 

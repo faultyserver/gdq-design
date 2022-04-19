@@ -3,4 +3,5 @@
 
 @import "./generated/ColorTokens.module.css";
 @import "./generated/FontTokens.module.css";
+@import "./generated/Spacing.module.css";
 @import "./generated/Themes.module.css";

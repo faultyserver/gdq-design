@@ -12,19 +12,19 @@
   --_stack-spacing: 0;
 }
 .space-xs {
-  --_stack-spacing: 2px;
+  --_stack-spacing: var(--space-xs);
 }
 .space-sm {
-  --_stack-spacing: 4px;
+  --_stack-spacing: var(--space-sm);
 }
 .space-md {
-  --_stack-spacing: 8px;
+  --_stack-spacing: var(--space-md);
 }
 .space-lg {
-  --_stack-spacing: 16px;
+  --_stack-spacing: var(--space-lg);
 }
 .space-xl {
-  --_stack-spacing: 32px;
+  --_stack-spacing: var(--space-xl);
 }
 
 .horizontal {

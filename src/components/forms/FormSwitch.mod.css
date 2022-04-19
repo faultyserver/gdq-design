@@ -1,13 +1,13 @@
 .container {
-  margin: 4px 0;
+  margin: var(--space-sm) 0;
 }
 
 .mainRow {
   display: flex;
-  gap: 8px;
+  gap: var(--space-md);
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-sm);
 }
 
 .switch {

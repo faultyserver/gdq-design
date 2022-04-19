@@ -25,7 +25,7 @@
   }
 
   & .fallbackAlt {
-    margin-top: 8px;
+    margin-top: var(--space-md);
     color: var(--text-secondary);
   }
 }

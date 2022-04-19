@@ -15,22 +15,13 @@ class BaseColorToken:
 
 
 @dataclass
-class RawBaseTokens:
-    name: str
-    description: str
-    scaleNames: t.List[str]
-    colors: t.Dict[str, t.List[str]]
-    staticColors: t.Dict[str, str]
-    fonts: t.Dict[str, str]
-
-
-@dataclass
 class BaseTokens:
     name: str
     description: str
     colors: t.Dict[str, BaseColorToken]
     fonts: t.Dict[str, str]
     fontWeights: t.Dict[str, int]
+    spacings: t.Dict[str, float]
 
 
 @dataclass
@@ -95,6 +86,7 @@ class Config:
                 colors=color_tokens,
                 fonts=raw["fonts"],
                 fontWeights=raw["fontWeights"],
+                spacings=raw["spacings"],
             )
 
     def resolve_token(self, value):

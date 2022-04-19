@@ -1,6 +1,6 @@
 .button {
   border: none;
-  padding: 8px 16px;
+  padding: var(--space-md) var(--space-lg);
   font-family: var(--font-accent);
   font-size: 16px;
   font-weight: var(--font-weight-semibold);
