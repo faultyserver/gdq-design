@@ -44,6 +44,9 @@ A React-based Design System for GDQ.
 - [ ] NavBar
   - [ ] Dropdown
 - [ ] Box (like Card, but just an outline)
+- [ ] Sequenced Content
+  - [ ] Stepper
+  - [ ] Slides
 
 **Generic**
 
