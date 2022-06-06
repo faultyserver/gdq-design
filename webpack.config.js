@@ -13,7 +13,7 @@ module.exports = (_env, options) => {
 
   return {
     entry: {
-      lib: "./index.tsx",
+      lib: "./src/index.tsx",
       docs: "./docs/index.tsx",
     },
     output: {

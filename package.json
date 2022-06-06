@@ -3,7 +3,8 @@
   "author": "Jon Egeland <jonegeland@gmail.com>",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "public/lib.js",
+  "source": "src/index.tsx",
   "files": [
     "dist",
     "src"

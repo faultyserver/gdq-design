@@ -496,7 +496,7 @@ function FormControlComponent() {
           as URL hostnames for links.
         </Text>
         <Card>
-          <FormControl label="Twitch URL" prefix={<Text>twitch.tv/</Text>}>
+          <FormControl label="Twitch URL" prefix="twitch.tv/">
             <TextInput />{" "}
           </FormControl>
         </Card>

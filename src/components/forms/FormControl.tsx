@@ -37,6 +37,9 @@ export function FormControl(props: FormControlProps) {
   } = props;
   const labelSize = LABEL_SIZES[size];
 
+  const PrefixNode = typeof prefix === "string" ? Text : "div";
+  const SuffixNode = typeof suffix === "string" ? Text : "div";
+
   return (
     <div className={classNames(styles.control, { [styles.disabled]: disabled })}>
       {label != null ? (
@@ -45,9 +48,9 @@ export function FormControl(props: FormControlProps) {
         </Text>
       ) : null}
       <div className={styles.inputRow}>
-        {prefix != null ? <div className={styles.attachment}>{prefix}</div> : null}
+        {prefix != null ? <PrefixNode className={styles.attachment}>{prefix}</PrefixNode> : null}
         {children}
-        {suffix != null ? <div className={styles.attachment}>{suffix}</div> : null}
+        {suffix != null ? <SuffixNode className={styles.attachment}>{suffix}</SuffixNode> : null}
       </div>
       {note != null ? (
         <Text className={styles.note} variant={`text-sm/${color}`}>
