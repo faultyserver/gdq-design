@@ -9,22 +9,26 @@ module.exports = (_env, options) => {
   console.log("NODE_ENV: ", NODE_ENV);
   const PROD = NODE_ENV == "production";
 
-  const publicPath = `./public/`;
+  const publicPath = `./dist/`;
 
   return {
     entry: {
       lib: "./src/index.tsx",
-      docs: "./docs/index.tsx",
     },
     output: {
-      filename: PROD ? "[name].js" : "[name].[contenthash].js",
+      filename: PROD ? "index.js" : "[name].[contenthash].js",
       path: path.resolve(__dirname, publicPath),
       publicPath: "/",
+      library: {
+        name: "gdqDesign",
+        type: "umd",
+      },
     },
+    externals: { react: "react" },
     plugins: [
       new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin({
-        filename: PROD ? "[name].css" : "[name].[contenthash].css",
+        filename: PROD ? "style.css" : "[name].[contenthash].css",
         chunkFilename: "[id].[chunkhash].css",
       }),
       new CleanWebpackPlugin(),
@@ -66,7 +70,7 @@ module.exports = (_env, options) => {
             {
               loader: "file-loader",
               options: {
-                outputPath: "./images/",
+                outputPath: `${publicPath}/images/`,
                 publicPath: "/images/",
                 name: (_file) => {
                   if (NODE_ENV === "development") {
