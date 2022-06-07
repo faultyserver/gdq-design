@@ -69,7 +69,6 @@ export { openPopout, usePopout } from "./components/popouts/openPopout";
 export { Tooltip, useTooltip } from "./components/tooltips/Tooltip";
 export type {
   TooltipProps,
-  TooltipRenderProps,
   TooltipTargetProps,
   TooltipOptions,
 } from "./components/tooltips/Tooltip";
@@ -82,7 +81,13 @@ export { Hero } from "./components/layout/Hero";
 export type { HeroProps, HeroType } from "./components/layout/Hero";
 export { Section } from "./components/layout/Section";
 export { Stack, Spacer } from "./components/layout/Stack";
-export type { StackProps, Spacing } from "./components/layout/Stack";
+export type {
+  Alignment,
+  Justification,
+  StackDirection,
+  StackProps,
+  Spacing,
+} from "./components/layout/Stack";
 
 export { Markdown } from "./components/text/Markdown";
 export type { MarkdownProps } from "./components/text/Markdown";
@@ -99,3 +104,5 @@ export { Callout } from "./components/Callout";
 export type { CalloutProps, CalloutType } from "./components/Callout";
 export { Tabs } from "./components/TabGroup";
 export type { TabGroupProps, TabColor, TabProps, TabHeaderProps } from "./components/TabGroup";
+
+export type { IconProps } from "./icons/IconProps";

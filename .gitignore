@@ -5,6 +5,7 @@ __pycache__/
 
 dist/
 public/
+typegen/
 
 yarn-error.log
 

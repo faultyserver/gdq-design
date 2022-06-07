@@ -3,15 +3,16 @@
   "author": "Jon Egeland <jonegeland@gmail.com>",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "dist/gdq-design.js",
+  "main": "dist/index.js",
   "module": "dist/index.js",
+  "typings": "dist/gdq-design.d.ts",
   "source": "src/index.tsx",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && tsc && api-extractor run --local --verbose",
     "serve": "webpack-dev-server --mode=development"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@microsoft/api-extractor": "^7.24.2",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/uuid": "^8.3.4",
