@@ -18,9 +18,8 @@
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "paths": {
-      "gdq-design": ["./src/index.tsx"],
-      "gdq-design/*": ["./src/*"]
+      "gdq-design": ["../dist/index"],
+      "gdq-design/*": ["../dist/*"]
     }
-  },
-  "include": ["src/**/*", "@types/"]
+  }
 }

@@ -12,25 +12,11 @@ module.exports = (_env, options) => {
   const publicPath = `./dist/`;
 
   return {
-    entry: {
-      lib: "./src/index.tsx",
-    },
+    entry: "./src/index.tsx",
     output: {
       filename: PROD ? "index.js" : "[name].[contenthash].js",
       path: path.resolve(__dirname, publicPath),
       publicPath: "/",
-      library: {
-        name: "gdqDesign",
-        type: "umd",
-      },
-    },
-    externals: {
-      react: {
-        commonjs: "react",
-        commonjs2: "react",
-        amd: "react",
-        root: "React",
-      },
     },
     plugins: [
       new webpack.ProgressPlugin(),
@@ -43,9 +29,6 @@ module.exports = (_env, options) => {
     ],
     resolve: {
       extensions: [".tsx", ".ts", ".js", ".json"],
-      alias: {
-        "gdq-design": path.resolve(__dirname, "src"),
-      },
     },
     module: {
       rules: [
@@ -57,7 +40,7 @@ module.exports = (_env, options) => {
           },
         },
         {
-          test: /(\.mod)?\.css$/,
+          test: /\.mod\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -69,6 +52,19 @@ module.exports = (_env, options) => {
               },
             },
             "postcss-loader",
+          ],
+        },
+        {
+          test: /\.css$/,
+          exclude: /\.mod\.css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: "css-loader",
+              options: {
+                modules: false,
+              },
+            },
           ],
         },
         {
