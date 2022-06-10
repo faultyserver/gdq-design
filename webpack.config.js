@@ -26,10 +26,16 @@ module.exports = (_env, options) => {
     },
     externals: {
       react: {
+        root: "React",
         commonjs: "react",
         commonjs2: "react",
         amd: "react",
-        root: "React",
+      },
+      "react-router-dom": {
+        root: "ReactRouterDom",
+        commonjs2: "react-router-dom",
+        commonjs: "react-router-dom",
+        amd: "react-router-dom",
       },
     },
     plugins: [
